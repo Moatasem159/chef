@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "219005004618",
+    "project_id": "chefbot-1455a",
+    "storage_bucket": "chefbot-1455a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:219005004618:android:85bb9fd98dff76314a2fb3",
+        "android_client_info": {
+          "package_name": "chefBot.chef"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnRNaWQuR45d7Jatnf6qUBwDw36P3mxb0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
