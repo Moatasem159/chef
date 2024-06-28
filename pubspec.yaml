@@ -26,6 +26,8 @@ dependencies:
   image_picker: ^1.1.2
   # Explicitly reads environment variables into a dart file from a .env file for more security and faster start up times.
   envied: ^0.5.4+1
+  # Customizable animated page indicator with a set of built-in effects.
+  smooth_page_indicator: ^1.1.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
