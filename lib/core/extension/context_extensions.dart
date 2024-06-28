@@ -8,7 +8,7 @@ extension SizeExtension on BuildContext {
 
 extension ThemesExtension on BuildContext {
   ThemeData get theme => Theme.of(this);
-  bool get isDark=>theme.brightness==Brightness.dark;
+  bool get isDark=>MediaQuery.platformBrightnessOf(this)==Brightness.dark;
 }
 
 extension LocalizationExtensions on BuildContext {
