@@ -6,8 +6,12 @@ version: 1.0.0+1
 environment:
   sdk: '>=3.4.3 <4.0.0'
 dependencies:
+  flutter_localizations:
+    sdk: flutter
   flutter:
     sdk: flutter
+  # Contains code to deal with internationalized/localized messages, date and number formatting
+  intl: ^0.19.0
   # Add the Cupertino Icons to your application.
   cupertino_icons: ^1.0.8
   # Flutter plugin for Firebase Core, enabling connecting to multiple Firebase apps.
