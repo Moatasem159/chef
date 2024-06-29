@@ -1,7 +1,7 @@
 import 'package:chef/core/extension/context_extensions.dart';
 import 'package:chef/core/themes/app_colors.dart';
 import 'package:chef/core/themes/app_theme.dart';
-import 'package:chef/features/onboarding/ui/widgets/onboarding_body.dart';
+import 'package:chef/features/auth/ui/widgets/onboarding_widgets/onboarding_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 class OnboardingScreen extends StatelessWidget {

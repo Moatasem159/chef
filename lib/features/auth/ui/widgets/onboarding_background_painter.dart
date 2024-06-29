@@ -1,7 +1,11 @@
-part of 'onboarding_body.dart';
-class _OnboardingBackgroundPainter extends CustomPainter {
+
+import 'package:chef/core/extension/context_extensions.dart';
+import 'package:chef/core/themes/app_colors.dart';
+import 'package:flutter/material.dart';
+
+class OnboardingBackgroundPainter extends CustomPainter {
   final BuildContext context;
-  const _OnboardingBackgroundPainter(this.context);
+  const OnboardingBackgroundPainter(this.context);
   @override
   void paint(Canvas canvas, Size size) {
     // Layer 2

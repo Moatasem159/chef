@@ -32,6 +32,12 @@ dependencies:
   envied: ^0.5.4+1
   # Customizable animated page indicator with a set of built-in effects.
   smooth_page_indicator: ^1.1.0
+  # Render After Effects animations natively on Flutter.
+  lottie: ^3.1.2
+  # A plugin for reading and writing simple key-value pairs.Wraps NSUserDefaults on iOS and SharedPreferences on Android.
+  shared_preferences: ^2.2.3
+  # Provides API to store data in secure storage.
+  flutter_secure_storage: ^9.2.2
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -41,6 +47,19 @@ dev_dependencies:
   envied_generator: ^0.5.4+1
   # A build system for Dart code generation and modular compilation.
   build_runner: ^2.4.11
+
+flutter_assets_generator:
+  # Optional. Sets the directory of generated localization files. Provided value should be a valid path on lib dir. Default: generated
+  output_dir: lib/core/utils/app_assets
+  # Optional. Sets the name for the generated localization file. Default: assets
+  output_filename: app_assets
+  # Optional. Sets the name for the generated localization class. Default: Assets
+  class_name: AppAssets
 flutter:
   generate: true
   uses-material-design: true
+  assets:
+    - assets/
+    - assets/l10n/
+    - assets/images/
+    - assets/images/icons/
