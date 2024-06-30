@@ -1,6 +1,13 @@
-part of 'login_body.dart';
-class _LoginWithGoogle extends StatelessWidget {
-  const _LoginWithGoogle();
+import 'package:chef/core/extension/context_extensions.dart';
+import 'package:chef/core/extension/spacing.dart';
+import 'package:chef/core/utils/app_assets.dart';
+import 'package:chef/core/widgets/main_button_with_text.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+
+class GoogleButton extends StatelessWidget {
+  const GoogleButton({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MainButtonWithText(
@@ -15,7 +22,9 @@ class _LoginWithGoogle extends StatelessWidget {
         children: [
           SvgPicture.asset(AppAssets.googleIcon),
           horizontalSpace(8),
-          Text(context.local.google,),
+          Text(
+            context.local.google,
+          ),
         ],
       ),
     );

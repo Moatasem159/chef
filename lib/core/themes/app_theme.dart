@@ -33,6 +33,13 @@ abstract class AppTheme {
         ),
       ),
     ),
+    iconButtonTheme: IconButtonThemeData(
+        style: IconButton.styleFrom(
+            foregroundColor: AppColors.primaryLightColor,
+            padding: const EdgeInsets.all(4),
+            minimumSize:const Size(30, 30)
+        )
+    ),
     inputDecorationTheme: InputDecorationTheme(
       isDense: true,
       filled: true,
@@ -80,6 +87,13 @@ abstract class AppTheme {
           fontWeight: FontWeight.w500,
         ),
       ),
+    ),
+    iconButtonTheme: IconButtonThemeData(
+      style: IconButton.styleFrom(
+        foregroundColor: AppColors.primaryDarkColor,
+        padding: const EdgeInsets.all(4),
+        minimumSize:const Size(30, 30)
+      )
     ),
     inputDecorationTheme: InputDecorationTheme(
       isDense: true,

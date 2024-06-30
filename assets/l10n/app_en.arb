@@ -6,12 +6,20 @@
   "loginSubTitle": "We're excited to have you back, can't wait to see what you've been up to since you last logged in.",
   "email": "Email",
   "password": "Password",
+  "fullName": "Full Name",
   "rememberMe": "Remember me",
   "forgotPassword": "Forgot password?",
   "login" : "Login",
   "orSignIn": "Or sign in with",
+  "orSignUp": "Or sign up with",
   "google": "Google",
   "doesNotHaveAccount": "Doesn't have an account yet ? ",
   "signup": "Sign up",
-  "signIn": "Sign in"
+  "signIn": "Sign in",
+  "createAccount": "Create Account",
+  "registerDialog": "Sign up now and start exploring a new recipes.We're excited to welcome you to our community!",
+  "byRegister": "By registering, you agree to our ",
+  "terms": "Terms & Conditions ",
+  "and": "and",
+  "privacyPolicy": " Privacy Policy"
 }
