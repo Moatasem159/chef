@@ -11,7 +11,9 @@ class _SignUpButton extends StatelessWidget {
         children: [
           TextSpan(
             text: context.local.signup,
-            recognizer: TapGestureRecognizer()..onTap = () {},
+            recognizer: TapGestureRecognizer()..onTap = () {
+              context.pushNamed(Routes.registerRoute);
+            },
             style: TextStyle(
               color: context.theme.primaryColor,
               decoration: TextDecoration.underline,

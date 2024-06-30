@@ -6,7 +6,7 @@ class _LoginTitle extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        verticalSpace(50),
+        verticalSpace(60),
         Text(
           context.local.loginTitle,
           style: AppTextStyles.style28Bold.copyWith(

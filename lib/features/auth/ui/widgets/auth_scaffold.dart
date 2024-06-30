@@ -18,10 +18,12 @@ class AuthScaffold extends StatelessWidget {
             : AppColors.primaryLightColor,
         statusBarIconBrightness: Brightness.light,
       ),
-      child: SafeArea(
-        child: Scaffold(
-          resizeToAvoidBottomInset: false,
-          body: body,
+      child: GestureDetector(
+        onTap: FocusScope.of(context).unfocus,
+        child: SafeArea(
+          child: Scaffold(
+            body: body,
+          ),
         ),
       ),
     );

@@ -1,7 +1,10 @@
 import 'package:chef/core/router/routes.dart';
 import 'package:chef/features/auth/ui/screens/login_screen.dart';
 import 'package:chef/features/auth/ui/screens/onboarding_screen.dart';
+import 'package:chef/features/auth/ui/screens/register_screen.dart';
 import 'package:flutter/material.dart';
+
+part 'slide_from_left_to_right.dart';
 
 class AppRouter {
   final bool isOnboardingSkipped;
@@ -22,6 +25,9 @@ class AppRouter {
         }
       case Routes.loginRoute:
         return MaterialPageRoute(builder: (context) => const LoginScreen());
+      case Routes.registerRoute:
+        return SlideFromLeftToRight(pageBuilder: (context, animation,
+            secondaryAnimation) => const RegisterScreen(),);
       default:
         return null;
     }

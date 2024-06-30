@@ -16,8 +16,7 @@ class OnboardingBody extends StatelessWidget {
       //TODO: add app Icon.
       children: [
         CustomPaint(
-          size: Size(context.screenWidth,
-              (context.screenWidth * 2.0444444444444443).toDouble()),
+          size: Size(context.screenWidth,630.h),
           painter: BackgroundPainter(context),
         ),
         Positioned(

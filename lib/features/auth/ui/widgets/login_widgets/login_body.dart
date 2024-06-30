@@ -1,6 +1,6 @@
 import 'package:chef/core/extension/context_extensions.dart';
 import 'package:chef/core/extension/spacing.dart';
-import 'package:chef/core/themes/app_colors.dart';
+import 'package:chef/core/router/routes.dart';
 import 'package:chef/core/utils/app_assets.dart';
 import 'package:chef/core/utils/app_text_styles.dart';
 import 'package:chef/core/widgets/main_button_with_text.dart';
@@ -31,31 +31,33 @@ class LoginBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        CustomPaint(
-          size: Size(context.screenWidth,
-              (context.screenWidth * 2.0444444444444443).toDouble()),
-          painter: BackgroundPainter(context),
-        ),
-        SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 15.h),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const _LoginTitle(),
-                const _LoginForm(),
-                const _OrSignWith(),
-                verticalSpace(15),
-                const _LoginWithGoogle(),
-                verticalSpace(15),
-                const _SignUpButton(),
-              ],
+    return ScrollConfiguration(
+      behavior: const ScrollBehavior().copyWith(overscroll: false),
+      child: SingleChildScrollView(
+        child: Stack(
+          children: [
+            CustomPaint(
+              size: Size(context.screenWidth, 630.h),
+              painter: BackgroundPainter(context),
             ),
-          ),
-        )
-      ],
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 15.h),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const _LoginTitle(),
+                  const _LoginForm(),
+                  const _OrSignWith(),
+                  verticalSpace(15),
+                  const _LoginWithGoogle(),
+                  verticalSpace(15),
+                  const _SignUpButton(),
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
