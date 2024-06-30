@@ -38,6 +38,8 @@ dependencies:
   shared_preferences: ^2.2.3
   # Provides API to store data in secure storage.
   flutter_secure_storage: ^9.2.2
+  # An SVG rendering and widget library for Flutter,
+  flutter_svg: ^2.0.10+1
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -47,6 +49,7 @@ dev_dependencies:
   envied_generator: ^0.5.4+1
   # A build system for Dart code generation and modular compilation.
   build_runner: ^2.4.11
+
 
 flutter_assets_generator:
   # Optional. Sets the directory of generated localization files. Provided value should be a valid path on lib dir. Default: generated

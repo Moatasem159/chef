@@ -1,6 +1,17 @@
 {
   "onboardingTitle": "Welcome to Chefbot!",
   "onboardingSubTitle": "Discover delicious possibilities with our AI-powered recipe app",
-  "letsGetStarted": "Let's get started!"
-
+  "letsGetStarted": "Let's get started!",
+  "loginTitle": "Welcome back",
+  "loginSubTitle": "We're excited to have you back, can't wait to see what you've been up to since you last logged in.",
+  "email": "Email",
+  "password": "Password",
+  "rememberMe": "Remember me",
+  "forgotPassword": "Forgot password?",
+  "login" : "Login",
+  "orSignIn": "Or sign in with",
+  "google": "Google",
+  "doesNotHaveAccount": "Doesn't have an account yet ? ",
+  "signup": "Sign up",
+  "signIn": "Sign in"
 }

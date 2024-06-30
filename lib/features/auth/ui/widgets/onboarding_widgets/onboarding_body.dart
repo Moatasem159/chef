@@ -3,8 +3,8 @@ import 'package:chef/core/helpers/constants.dart';
 import 'package:chef/core/helpers/shared_preferences_helper.dart';
 import 'package:chef/core/router/routes.dart';
 import 'package:chef/core/utils/app_text_styles.dart';
-import 'package:chef/core/widgets/main_text_button.dart';
-import 'package:chef/features/auth/ui/widgets/onboarding_background_painter.dart';
+import 'package:chef/core/widgets/main_button_with_text.dart';
+import 'package:chef/features/auth/ui/widgets/background_painter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 part 'onboarding_button.dart';
@@ -18,7 +18,7 @@ class OnboardingBody extends StatelessWidget {
         CustomPaint(
           size: Size(context.screenWidth,
               (context.screenWidth * 2.0444444444444443).toDouble()),
-          painter: OnboardingBackgroundPainter(context),
+          painter: BackgroundPainter(context),
         ),
         Positioned(
           top: 200.h,

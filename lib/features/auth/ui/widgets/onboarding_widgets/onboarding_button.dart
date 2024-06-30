@@ -7,7 +7,7 @@ class _OnboardingButton extends StatelessWidget {
       bottom: 80.h,
       left: 10.w,
       right: 10.w,
-      child: MainTextButton(
+      child: MainButtonWithText(
         onTap: () async{
           await SharedPrefHelper.setData(AppConstants.skippedOnboarding,true).then((value) {
             context.pushNamedAndRemoveUntil(Routes.loginRoute,predicate: (Route route) => false);
