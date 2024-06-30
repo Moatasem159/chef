@@ -21,5 +21,13 @@
   "byRegister": "By registering, you agree to our ",
   "terms": "Terms & Conditions ",
   "and": "and",
-  "privacyPolicy": " Privacy Policy"
+  "privacyPolicy": " Privacy Policy",
+  "lowerLetter": "At least 1 lowercase letter",
+  "upperLetter": "At least 1 uppercase letter",
+  "specialLetter": "At least 1 special character",
+  "numberNum": "At least 1 number",
+  "numberCount": "At least 8 characters long",
+  "validEmail": "Please enter a valid email",
+  "validPassword": "Please enter a valid password",
+  "validName": "Please enter a valid name"
 }

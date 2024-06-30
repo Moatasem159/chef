@@ -8,7 +8,7 @@ class _RegisterTitle extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        verticalSpace(60),
+        verticalSpace(50),
         Text(
           context.local.createAccount,
           style: AppTextStyles.style28Bold.copyWith(
