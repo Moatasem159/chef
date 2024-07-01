@@ -39,6 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
       value: AppTheme.systemUiOverlayStyle(context),
       child:  SafeArea(
         child: Scaffold(
+          body: screens.elementAt(currentIndex),
           bottomNavigationBar: MainBottomNavbar(
             currentIndex: currentIndex,
             onTap: (value) {

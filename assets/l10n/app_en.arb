@@ -31,5 +31,16 @@
   "validPassword": "Please enter a valid password",
   "validName": "Please enter a valid name",
   "emailAlreadyInUse": "It looks like this email address is already in use with another account",
-  "loginError": "It seems like the email or password you entered is invalid"
+  "loginError": "It seems like the email or password you entered is invalid",
+  "hello": "Hello , {userName}",
+  "@hello": {
+    "description": "A message with a single parameter",
+    "placeholders": {
+      "userName": {
+        "type": "String",
+        "example": "Bob"
+      }
+    }
+  },
+  "recipeSubtitle": "Ready to discover new recipes ?"
 }

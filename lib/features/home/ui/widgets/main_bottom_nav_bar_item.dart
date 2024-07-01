@@ -28,7 +28,7 @@ class MainBottomNavBarItem extends StatelessWidget {
           color: currentIndex == index
               ? context.isDark
                   ? Colors.white10
-                  : Colors.grey[300]
+                  : Colors.black12
               : Colors.transparent,
           border: Border(
             bottom: BorderSide(
