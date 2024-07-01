@@ -46,6 +46,7 @@
   "recipeDialogPart1": "You have the ",
   "ingredients": "Ingredients",
   "recipeDialogPart2": " and don't know what to make",
-  "justTakePic": "Just take a picture"
-
+  "justTakePic": "Just take a picture",
+  "createRecipe": "Create a recipe",
+  "haveTheseIngredients": "I have these ingredients:"
 }

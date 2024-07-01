@@ -1,4 +1,4 @@
-part of 'app_router.dart';
+part of '../app_router.dart';
 
 class SlideFromLeftToRight extends PageRouteBuilder {
   SlideFromLeftToRight({

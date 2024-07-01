@@ -35,7 +35,7 @@ class MainButtonWithText extends StatelessWidget {
           backgroundColor: WidgetStatePropertyAll(backgroundColor),
           foregroundColor: WidgetStatePropertyAll(foregroundColor),
           overlayColor: WidgetStatePropertyAll(overlayColor)),
-      child: child ?? Text(title),
+      child: child ?? Text(title,),
     );
   }
 }

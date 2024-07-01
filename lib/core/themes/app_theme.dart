@@ -76,6 +76,17 @@ abstract class AppTheme {
         color: Colors.black,
       ),
     ),
+    appBarTheme: AppBarTheme(
+      elevation: 7,
+      titleSpacing: 5,
+      backgroundColor: AppColors.primaryLightColor,
+      iconTheme: const IconThemeData(
+        color: Colors.white,
+      ),
+      titleTextStyle: GoogleFonts.poppins(
+        fontWeight: FontWeight.w600,
+      ),
+    ),
   );
   static final ThemeData darkTheme = ThemeData(
     scaffoldBackgroundColor: AppColors.scaffoldDarkBackground,
@@ -140,6 +151,17 @@ abstract class AppTheme {
       contentTextStyle: GoogleFonts.poppins(
         color: Colors.white,
         fontWeight: FontWeight.w500,
+      ),
+    ),
+    appBarTheme: AppBarTheme(
+      elevation: 7,
+      titleSpacing: 5,
+      backgroundColor: AppColors.primaryDarkColor,
+      iconTheme: const IconThemeData(
+        color: Colors.white,
+      ),
+      titleTextStyle: GoogleFonts.poppins(
+        fontWeight: FontWeight.w600,
       ),
     ),
   );

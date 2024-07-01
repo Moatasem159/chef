@@ -9,6 +9,6 @@ abstract class AppColors {
   // Dark theme colors
   static const Color primaryDarkColor = Color(0xffA91D3A);
   static const Color secondaryDarkColor = Color(0xffC73659);
-  static const Color thirdDarkColor = Color(0xffEEEEEE);
+  static const Color thirdDarkColor = Color(0xff322929);
   static const Color scaffoldDarkBackground = Color(0xff151515);
 }

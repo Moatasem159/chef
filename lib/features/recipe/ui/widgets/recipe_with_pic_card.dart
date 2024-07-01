@@ -1,6 +1,8 @@
 part of '../screens/recipe_screen.dart';
+
 class _RecipeWithPicCard extends StatelessWidget {
   const _RecipeWithPicCard();
+
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
@@ -21,13 +23,12 @@ class _RecipeWithPicCard extends StatelessWidget {
                 SvgPicture.asset(AppAssets.geminiIcon, width: 20, height: 20),
                 verticalSpace(10),
                 SizedBox(
-                  width: 160.w,
+                  width: 160,
                   child: Text.rich(
                     TextSpan(
                         text: context.local.recipeDialogPart1,
-                        style: AppTextStyles.style14Normal.copyWith(
-                            color: Colors.white
-                        ),
+                        style: AppTextStyles.style14Normal
+                            .copyWith(color: Colors.white),
                         children: [
                           TextSpan(
                             text: context.local.ingredients,
@@ -42,12 +43,12 @@ class _RecipeWithPicCard extends StatelessWidget {
                 ),
                 verticalSpace(10),
                 MainButtonWithText(
+                  foregroundColor: Colors.white,
                   border: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(25)
-                  ),
-                  backgroundColor:context.theme.colorScheme.secondary,
+                      borderRadius: BorderRadius.circular(25)),
+                  backgroundColor: context.theme.colorScheme.secondary,
                   onTap: () {
-                    //TODO: navigation
+                    context.pushNamed(Routes.createRecipeRoute);
                   },
                   title: context.local.justTakePic,
                 )
