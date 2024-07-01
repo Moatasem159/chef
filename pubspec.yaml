@@ -56,6 +56,8 @@ dependencies:
   hive: ^2.2.3
   # Extension for Hive. Makes it easier to use Hive in Flutter apps.
   hive_flutter: ^1.1.0
+  # A pure Dart library that checks for internet by opening a socket to a list of specified addresses.
+  internet_connection_checker: ^1.0.0+1
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -71,15 +73,6 @@ dev_dependencies:
   json_serializable: ^6.8.0
   # Extension for Hive. Automatically generates TypeAdapters to store any class.
   hive_generator: ^2.0.1
-
-
-flutter_assets_generator:
-  # Optional. Sets the directory of generated localization files. Provided value should be a valid path on lib dir. Default: generated
-  output_dir: lib/core/utils/app_assets
-  # Optional. Sets the name for the generated localization file. Default: assets
-  output_filename: app_assets
-  # Optional. Sets the name for the generated localization class. Default: Assets
-  class_name: AppAssets
 flutter:
   generate: true
   uses-material-design: true
