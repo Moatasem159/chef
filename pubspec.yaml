@@ -81,3 +81,12 @@ flutter:
     - assets/l10n/
     - assets/images/
     - assets/images/icons/
+
+
+flutter_assets_generator:
+  # Optional. Sets the directory of generated localization files. Provided value should be a valid path on lib dir. Default: generated
+  output_dir: lib/core/utils/app_assets
+  # Optional. Sets the name for the generated localization file. Default: assets
+  output_filename: app_assets
+  # Optional. Sets the name for the generated localization class. Default: Assets
+  class_name: AppAssets

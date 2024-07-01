@@ -2,7 +2,6 @@ import 'package:chef/core/extension/context_extensions.dart';
 import 'package:chef/core/extension/spacing.dart';
 import 'package:chef/core/utils/app_text_styles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PasswordValidations extends StatelessWidget {
   final bool hasLowerCase;
@@ -70,8 +69,7 @@ class _ValidationRow extends StatelessWidget {
         horizontalSpace(6),
         Text(
           text,
-          style: AppTextStyles.style16Normal.copyWith(
-            fontSize: 14.sp,
+          style: AppTextStyles.style14Normal.copyWith(
             decoration: hasValidated ? TextDecoration.lineThrough : null,
             decorationColor: Colors.grey,
             decorationThickness: 2,

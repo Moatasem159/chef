@@ -12,6 +12,7 @@ class MainButtonWithText extends StatelessWidget {
   final Color? foregroundColor;
   final Color? overlayColor;
 
+  final OutlinedBorder? border;
   const MainButtonWithText({
     super.key,
     this.onTap,
@@ -21,6 +22,7 @@ class MainButtonWithText extends StatelessWidget {
     this.foregroundColor,
     this.child,
     this.overlayColor,
+    this.border,
   });
 
   @override
@@ -29,6 +31,7 @@ class MainButtonWithText extends StatelessWidget {
       onPressed: onTap,
       style: context.theme.elevatedButtonTheme.style!.copyWith(
           fixedSize: WidgetStatePropertyAll(buttonSize),
+          shape: WidgetStatePropertyAll(border),
           backgroundColor: WidgetStatePropertyAll(backgroundColor),
           foregroundColor: WidgetStatePropertyAll(foregroundColor),
           overlayColor: WidgetStatePropertyAll(overlayColor)),

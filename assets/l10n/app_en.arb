@@ -42,5 +42,10 @@
       }
     }
   },
-  "recipeSubtitle": "Ready to discover new recipes ?"
+  "recipeSubtitle": "Ready to discover new recipes ?",
+  "recipeDialogPart1": "You have the ",
+  "ingredients": "Ingredients",
+  "recipeDialogPart2": " and don't know what to make",
+  "justTakePic": "Just take a picture"
+
 }
