@@ -25,7 +25,7 @@ abstract class AppTheme {
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.primaryLightColor,
         foregroundColor: AppColors.thirdLightColor,
-        padding: const EdgeInsets.symmetric(vertical: 12,horizontal: 8),
+        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
         elevation: 10,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         textStyle: GoogleFonts.poppins(
@@ -34,11 +34,11 @@ abstract class AppTheme {
       ),
     ),
     iconButtonTheme: IconButtonThemeData(
-        style: IconButton.styleFrom(
-            foregroundColor: AppColors.primaryLightColor,
-            padding: const EdgeInsets.all(4),
-            minimumSize:const Size(30, 30)
-        )
+      style: IconButton.styleFrom(
+        foregroundColor: AppColors.primaryLightColor,
+        padding: const EdgeInsets.all(4),
+        minimumSize: const Size(30, 30),
+      ),
     ),
     inputDecorationTheme: InputDecorationTheme(
       isDense: true,
@@ -65,9 +65,17 @@ abstract class AppTheme {
         textStyle: GoogleFonts.poppins(decoration: TextDecoration.underline),
       ),
     ),
-      iconTheme: const IconThemeData(
-        color: AppColors.primaryLightColor,
-      )
+    iconTheme: const IconThemeData(
+      color: AppColors.primaryLightColor,
+    ),
+    snackBarTheme: SnackBarThemeData(
+      elevation: 10,
+      backgroundColor: AppColors.scaffoldLightBackground,
+      contentTextStyle: GoogleFonts.poppins(
+        fontWeight: FontWeight.w500,
+        color: Colors.black,
+      ),
+    ),
   );
   static final ThemeData darkTheme = ThemeData(
     scaffoldBackgroundColor: AppColors.scaffoldDarkBackground,
@@ -83,7 +91,7 @@ abstract class AppTheme {
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.primaryDarkColor,
         foregroundColor: AppColors.thirdDarkColor,
-        padding: const EdgeInsets.symmetric(vertical: 12,horizontal: 8),
+        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
         elevation: 10,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         textStyle: GoogleFonts.poppins(
@@ -95,8 +103,8 @@ abstract class AppTheme {
       style: IconButton.styleFrom(
         foregroundColor: AppColors.primaryDarkColor,
         padding: const EdgeInsets.all(4),
-        minimumSize:const Size(30, 30)
-      )
+        minimumSize: const Size(30, 30),
+      ),
     ),
     inputDecorationTheme: InputDecorationTheme(
       isDense: true,
@@ -126,7 +134,14 @@ abstract class AppTheme {
     iconTheme: const IconThemeData(
       color: AppColors.primaryDarkColor,
     ),
-
+    snackBarTheme: SnackBarThemeData(
+      elevation: 10,
+      backgroundColor: AppColors.scaffoldDarkBackground,
+      contentTextStyle: GoogleFonts.poppins(
+        color: Colors.white,
+        fontWeight: FontWeight.w500,
+      ),
+    ),
   );
 
   static SystemUiOverlayStyle systemUiOverlayStyle(BuildContext context) =>

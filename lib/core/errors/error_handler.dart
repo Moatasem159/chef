@@ -6,18 +6,21 @@ import 'firebase_exception_codes.dart';
 
 class ErrorHandler implements Exception {
   late String code;
+
   ErrorHandler.handle(dynamic error) {
-    if(error is FirebaseException) {
-      code=error.code;
+    if (error is FirebaseException) {
+      code = error.code;
       debugPrint(error.message);
       debugPrint(error.code);
     }
   }
+
   static String handleErrorMessages(BuildContext context, String code) {
-    if(code==FirebaseExceptionCodes.emailAlreadyExists){
+    if (code == FirebaseExceptionCodes.emailAlreadyExists) {
       return context.local.emailAlreadyInUse;
-    }
-    else{
+    } else if (code == FirebaseExceptionCodes.invalidCredential) {
+      return context.local.loginError;
+    } else {
       return code;
     }
   }

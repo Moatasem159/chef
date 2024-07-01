@@ -65,7 +65,6 @@ class _RegisterFormState extends State<_RegisterForm> {
               if (value.isNullOrEmpty() || !AppRegex.isEmailValid(value!)) {
                 return context.local.validEmail;
               }
-
               return null;
             },
           ),
@@ -106,7 +105,6 @@ class _RegisterFormState extends State<_RegisterForm> {
                   .formKey
                   .currentState!
                   .validate()) {
-                FocusManager.instance.dispose();
                 context.read<RegisterCubit>().register();
                 showAdaptiveDialog(
                   barrierDismissible: true,

@@ -30,5 +30,6 @@
   "validEmail": "Please enter a valid email",
   "validPassword": "Please enter a valid password",
   "validName": "Please enter a valid name",
-  "emailAlreadyInUse": "It looks like this email address is already in use with another account"
+  "emailAlreadyInUse": "It looks like this email address is already in use with another account",
+  "loginError": "It seems like the email or password you entered is invalid"
 }

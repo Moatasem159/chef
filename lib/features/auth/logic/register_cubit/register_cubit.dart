@@ -20,7 +20,7 @@ class RegisterCubit extends Cubit<RegisterStates> {
 
   register() async {
     emit(const RegisterLoadingState());
-    final FirebaseResult<UserCredential> response = await _firebaseAuthRepository.register(
+    final FirebaseResult<UserCredential> response = await _firebaseAuthRepository.registerWithEmailAndPassword(
       user: FirebaseUserModel(
         name: nameController.text,
         email: emailController.text,
@@ -31,5 +31,14 @@ class RegisterCubit extends Cubit<RegisterStates> {
       success: (UserCredential data) => emit(const RegisterSuccessState()),
       failure: (ErrorHandler errorHandler) => emit(RegisterErrorState(errorHandler.code)),
     );
+  }
+
+
+  @override
+  close() async {
+    nameController.dispose();
+    emailController.dispose();
+    passwordController.dispose();
+    super.close();
   }
 }

@@ -13,7 +13,7 @@ class FirebaseAuthClient {
   Future<UserCredential> registerWithEmailAndPassword(
       {required FirebaseUserModel user}) async {
     return await _firebaseAuth.createUserWithEmailAndPassword(
-        email: user.email, password: user.password);
+        email: user.email!, password: user.password!);
   }
 
   /// if the registration is done successfully this function will
@@ -23,5 +23,24 @@ class FirebaseAuthClient {
         .collection(FirebaseConstants.userCollection)
         .doc(user.uId)
         .set(user.toJson());
+  }
+
+  /// if the login is done successfully this function will
+  /// get [userdata] from firebase
+  Future<FirebaseUserModel> getUserData(
+      {required FirebaseUserModel user}) async {
+    final DocumentSnapshot<Map<String, dynamic>> response =
+        await _firebaseFirestore
+            .collection(FirebaseConstants.userCollection)
+            .doc(user.uId)
+            .get();
+    return FirebaseUserModel.fromJson(response.data()!);
+  }
+
+  /// take [user] and login with [email] and [password]
+  Future<UserCredential> loginWithEmailAndPassword(
+      {required FirebaseUserModel user}) async {
+    return await _firebaseAuth.signInWithEmailAndPassword(
+        email: user.email!, password: user.password!);
   }
 }

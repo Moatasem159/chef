@@ -20,10 +20,14 @@ FirebaseUserModel _$FirebaseUserModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$FirebaseUserModel {
+  @HiveField(0)
   String? get uId => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get email => throw _privateConstructorUsedError;
-  String get password => throw _privateConstructorUsedError;
+  @HiveField(1)
+  String? get name => throw _privateConstructorUsedError;
+  @HiveField(2)
+  String? get email => throw _privateConstructorUsedError;
+  @HiveField(3)
+  String? get password => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -37,7 +41,11 @@ abstract class $FirebaseUserModelCopyWith<$Res> {
           FirebaseUserModel value, $Res Function(FirebaseUserModel) then) =
       _$FirebaseUserModelCopyWithImpl<$Res, FirebaseUserModel>;
   @useResult
-  $Res call({String? uId, String name, String email, String password});
+  $Res call(
+      {@HiveField(0) String? uId,
+      @HiveField(1) String? name,
+      @HiveField(2) String? email,
+      @HiveField(3) String? password});
 }
 
 /// @nodoc
@@ -54,27 +62,27 @@ class _$FirebaseUserModelCopyWithImpl<$Res, $Val extends FirebaseUserModel>
   @override
   $Res call({
     Object? uId = freezed,
-    Object? name = null,
-    Object? email = null,
-    Object? password = null,
+    Object? name = freezed,
+    Object? email = freezed,
+    Object? password = freezed,
   }) {
     return _then(_value.copyWith(
       uId: freezed == uId
           ? _value.uId
           : uId // ignore: cast_nullable_to_non_nullable
               as String?,
-      name: null == name
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      email: null == email
+              as String?,
+      email: freezed == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      password: null == password
+              as String?,
+      password: freezed == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -87,7 +95,11 @@ abstract class _$$FirebaseUserModelImplCopyWith<$Res>
       __$$FirebaseUserModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? uId, String name, String email, String password});
+  $Res call(
+      {@HiveField(0) String? uId,
+      @HiveField(1) String? name,
+      @HiveField(2) String? email,
+      @HiveField(3) String? password});
 }
 
 /// @nodoc
@@ -102,51 +114,57 @@ class __$$FirebaseUserModelImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? uId = freezed,
-    Object? name = null,
-    Object? email = null,
-    Object? password = null,
+    Object? name = freezed,
+    Object? email = freezed,
+    Object? password = freezed,
   }) {
     return _then(_$FirebaseUserModelImpl(
       uId: freezed == uId
           ? _value.uId
           : uId // ignore: cast_nullable_to_non_nullable
               as String?,
-      name: null == name
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      email: null == email
+              as String?,
+      email: freezed == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      password: null == password
+              as String?,
+      password: freezed == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$FirebaseUserModelImpl implements _FirebaseUserModel {
-  const _$FirebaseUserModelImpl(
-      {this.uId,
-      required this.name,
-      required this.email,
-      required this.password});
+@HiveType(typeId: 0)
+class _$FirebaseUserModelImpl extends _FirebaseUserModel {
+  _$FirebaseUserModelImpl(
+      {@HiveField(0) this.uId,
+      @HiveField(1) this.name,
+      @HiveField(2) this.email,
+      @HiveField(3) this.password})
+      : super._();
 
   factory _$FirebaseUserModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$FirebaseUserModelImplFromJson(json);
 
   @override
+  @HiveField(0)
   final String? uId;
   @override
-  final String name;
+  @HiveField(1)
+  final String? name;
   @override
-  final String email;
+  @HiveField(2)
+  final String? email;
   @override
-  final String password;
+  @HiveField(3)
+  final String? password;
 
   @override
   String toString() {
@@ -184,24 +202,29 @@ class _$FirebaseUserModelImpl implements _FirebaseUserModel {
   }
 }
 
-abstract class _FirebaseUserModel implements FirebaseUserModel {
-  const factory _FirebaseUserModel(
-      {final String? uId,
-      required final String name,
-      required final String email,
-      required final String password}) = _$FirebaseUserModelImpl;
+abstract class _FirebaseUserModel extends FirebaseUserModel {
+  factory _FirebaseUserModel(
+      {@HiveField(0) final String? uId,
+      @HiveField(1) final String? name,
+      @HiveField(2) final String? email,
+      @HiveField(3) final String? password}) = _$FirebaseUserModelImpl;
+  _FirebaseUserModel._() : super._();
 
   factory _FirebaseUserModel.fromJson(Map<String, dynamic> json) =
       _$FirebaseUserModelImpl.fromJson;
 
   @override
+  @HiveField(0)
   String? get uId;
   @override
-  String get name;
+  @HiveField(1)
+  String? get name;
   @override
-  String get email;
+  @HiveField(2)
+  String? get email;
   @override
-  String get password;
+  @HiveField(3)
+  String? get password;
   @override
   @JsonKey(ignore: true)
   _$$FirebaseUserModelImplCopyWith<_$FirebaseUserModelImpl> get copyWith =>
