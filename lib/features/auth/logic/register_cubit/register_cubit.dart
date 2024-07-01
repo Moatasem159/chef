@@ -1,6 +1,8 @@
 import 'package:chef/core/errors/error_handler.dart';
+import 'package:chef/core/helpers/firebase_result.dart';
 import 'package:chef/features/auth/data/models/firebase_user.dart';
 import 'package:chef/features/auth/data/repository/firebase_auth_repository.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -18,7 +20,7 @@ class RegisterCubit extends Cubit<RegisterStates> {
 
   register() async {
     emit(const RegisterLoadingState());
-    final response = await _firebaseAuthRepository.register(
+    final FirebaseResult<UserCredential> response = await _firebaseAuthRepository.register(
       user: FirebaseUserModel(
         name: nameController.text,
         email: emailController.text,
@@ -26,8 +28,8 @@ class RegisterCubit extends Cubit<RegisterStates> {
       ),
     );
     response.when(
-      success: (data) => emit(const RegisterSuccessState()),
-      failure: (ErrorHandler errorHandler) => emit(RegisterErrorState(errorHandler.error)),
+      success: (UserCredential data) => emit(const RegisterSuccessState()),
+      failure: (ErrorHandler errorHandler) => emit(RegisterErrorState(errorHandler.code)),
     );
   }
 }

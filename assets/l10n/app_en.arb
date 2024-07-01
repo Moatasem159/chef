@@ -29,5 +29,6 @@
   "numberCount": "At least 8 characters long",
   "validEmail": "Please enter a valid email",
   "validPassword": "Please enter a valid password",
-  "validName": "Please enter a valid name"
+  "validName": "Please enter a valid name",
+  "emailAlreadyInUse": "It looks like this email address is already in use with another account"
 }

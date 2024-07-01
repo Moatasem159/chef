@@ -1,3 +1,3 @@
 abstract class FirebaseExceptionCodes{
-  static const String emailAlreadyExists='auth/email-already-exists';
+  static const String emailAlreadyExists='email-already-in-use';
 }

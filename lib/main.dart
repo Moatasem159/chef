@@ -8,9 +8,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  Future.wait([
-   setupGetIt(),
-   ScreenUtil.ensureScreenSize(),
+  await Future.wait([
+    setupGetIt(),
+    ScreenUtil.ensureScreenSize(),
   ]);
   final bool isOnboardingSkipped =await SharedPrefHelper.getBool(AppConstants.skippedOnboarding);
   runApp(

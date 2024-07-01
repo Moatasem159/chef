@@ -1,7 +1,9 @@
+import 'package:chef/core/errors/error_handler.dart';
 import 'package:chef/core/extension/context_extensions.dart';
 import 'package:chef/core/extension/spacing.dart';
 import 'package:chef/core/extension/string_extension.dart';
 import 'package:chef/core/helpers/app_regex.dart';
+import 'package:chef/core/router/routes.dart';
 import 'package:chef/core/utils/app_text_styles.dart';
 import 'package:chef/core/widgets/main_button_with_text.dart';
 import 'package:chef/core/widgets/main_icon_button.dart';
@@ -14,12 +16,10 @@ import 'package:chef/features/auth/ui/widgets/register_widgets/password_validati
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 part 'register_title.dart';
-
+part 'register_loading_dialog.dart';
 part 'register_form.dart';
 part 'terms_and_conditions.dart';
-
 class RegisterBody extends StatelessWidget {
   const RegisterBody({super.key});
 

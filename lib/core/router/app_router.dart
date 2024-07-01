@@ -24,10 +24,11 @@ class AppRouter {
           }
         }
       case Routes.loginRoute:
-        return MaterialPageRoute(builder: (context) => const LoginScreen());
+        return SlideFromLeftToRight(pageBuilder: (context, animation,
+            secondaryAnimation) => const LoginScreen());
       case Routes.registerRoute:
         return SlideFromLeftToRight(pageBuilder: (context, animation,
-            secondaryAnimation) => const RegisterScreen(),);
+            secondaryAnimation) => const RegisterScreen());
       default:
         return null;
     }

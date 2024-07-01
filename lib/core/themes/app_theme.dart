@@ -65,6 +65,9 @@ abstract class AppTheme {
         textStyle: GoogleFonts.poppins(decoration: TextDecoration.underline),
       ),
     ),
+      iconTheme: const IconThemeData(
+        color: AppColors.primaryLightColor,
+      )
   );
   static final ThemeData darkTheme = ThemeData(
     scaffoldBackgroundColor: AppColors.scaffoldDarkBackground,
@@ -120,6 +123,10 @@ abstract class AppTheme {
         textStyle: GoogleFonts.poppins(decoration: TextDecoration.underline),
       ),
     ),
+    iconTheme: const IconThemeData(
+      color: AppColors.primaryDarkColor,
+    ),
+
   );
 
   static SystemUiOverlayStyle systemUiOverlayStyle(BuildContext context) =>
