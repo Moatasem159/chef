@@ -52,6 +52,7 @@
   "haveTheseIngredients": "I have these ingredients:",
   "haveStableIngredient": "I also have these stable ingredients:",
   "haveDietaryRestriction": "I have the following dietary restriction:",
+  "modeFor": "I'm in the mode for:",
   "soil": "soil",
   "butter": "butter",
   "flour": "flour",
@@ -67,5 +68,15 @@
   "nutAllergy": "nut allergy",
   "soyAllergy": "soy allergy",
   "fishAllergy": "fish allergy",
-  "keto":"keto"
+  "keto":"keto",
+  "italian": "italian",
+  "indian": "indian",
+  "egyptian": "egyptian",
+  "chinese": "chinese",
+  "french": "french",
+  "japanese":"japanese",
+  "american": "american",
+  "turkish": "turkish",
+  "addAdditionalContext": "Add additionally context....."
+
 }
