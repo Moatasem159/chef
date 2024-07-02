@@ -1,6 +1,3 @@
-import 'dart:async';
-
-import 'package:chef/bloc_observer.dart';
 import 'package:chef/core/helpers/constants.dart';
 import 'package:chef/features/auth/data/models/firebase_user.dart';
 import 'package:chef/features/auth/data/repository/firebase_auth_repository.dart';
@@ -10,15 +7,11 @@ import 'package:chef/firebase_options.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-
-final getIt = GetIt.instance;
-
+final GetIt getIt = GetIt.instance;
 Future<void> setupGetIt() async {
-  Bloc.observer = AppBlocObserver();
  await Future.wait([
     Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,

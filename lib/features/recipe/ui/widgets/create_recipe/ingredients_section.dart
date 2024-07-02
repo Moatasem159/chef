@@ -18,9 +18,33 @@ class _IngredientsSection extends StatelessWidget {
             ),
           ),
           verticalSpace(5),
-          const _ImageContainer(),
+          const _ImageList(),
         ],
       ),
+    );
+  }
+}
+
+class _ImageList extends StatelessWidget {
+  const _ImageList();
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<CreateRecipeCubit, CreateRecipeStates>(
+      buildWhen: (previous, current) =>
+          current is PickImageSuccessState ||
+          current is PickImageLoadingState ||
+          current is RemoveImageSuccessState ||
+          current is RemoveImageLoadingState,
+      builder: (context, state) {
+        return Wrap(
+          children: context
+              .read<CreateRecipeCubit>()
+              .images
+              .map((e) => _ImageContainer(image: e))
+              .toList(),
+        );
+      },
     );
   }
 }

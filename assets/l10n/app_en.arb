@@ -79,5 +79,8 @@
   "turkish": "turkish",
   "addAdditionalContext": "Add additionally context.....",
   "submit": "Submit",
-  "reset": "Reset"
+  "reset": "Reset",
+  "chooseImage": "Choose image",
+  "fromCamera": "From camera",
+  "fromGallery": "From gallery"
 }
