@@ -36,6 +36,7 @@ class CreateRecipeWithImageBody extends StatelessWidget {
         SliverAppBar(
           pinned: true,
           leadingWidth: 40,
+          titleTextStyle: AppTextStyles.style16SemiBold,
           title: Text(context.local.createRecipe),
         ),
         verticalSliverSpace(10),

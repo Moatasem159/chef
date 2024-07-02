@@ -76,15 +76,12 @@ abstract class AppTheme {
         color: Colors.black,
       ),
     ),
-    appBarTheme: AppBarTheme(
+    appBarTheme: const AppBarTheme(
       elevation: 7,
       titleSpacing: 5,
       backgroundColor: AppColors.primaryLightColor,
-      iconTheme: const IconThemeData(
+      iconTheme: IconThemeData(
         color: Colors.white,
-      ),
-      titleTextStyle: GoogleFonts.poppins(
-        fontWeight: FontWeight.w600,
       ),
     ),
   );
@@ -153,15 +150,12 @@ abstract class AppTheme {
         fontWeight: FontWeight.w500,
       ),
     ),
-    appBarTheme: AppBarTheme(
+    appBarTheme: const AppBarTheme(
       elevation: 7,
       titleSpacing: 5,
       backgroundColor: AppColors.primaryDarkColor,
-      iconTheme: const IconThemeData(
+      iconTheme: IconThemeData(
         color: Colors.white,
-      ),
-      titleTextStyle: GoogleFonts.poppins(
-        fontWeight: FontWeight.w600,
       ),
     ),
   );
