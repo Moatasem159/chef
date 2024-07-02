@@ -48,8 +48,10 @@
   "recipeDialogPart2": " and don't know what to make",
   "justTakePic": "Just take a picture",
   "createRecipe": "Create a recipe",
+  "createARecipe": "Create a recipe:",
   "haveTheseIngredients": "I have these ingredients:",
   "haveStableIngredient": "I also have these stable ingredients:",
+  "haveDietaryRestriction": "I have the following dietary restriction:",
   "soil": "soil",
   "butter": "butter",
   "flour": "flour",
@@ -57,5 +59,13 @@
   "pepper": "pepper",
   "sugar": "sugar",
   "milk": "milk",
-  "vinegar": "vinegar"
+  "vinegar": "vinegar",
+  "vegetarian": "vegetarian",
+  "dairyFree": "dairy free",
+  "lowCarb": "low carb",
+  "wheatAllergy": "wheat allergy",
+  "nutAllergy": "nut allergy",
+  "soyAllergy": "soy allergy",
+  "fishAllergy": "fish allergy",
+  "keto":"keto"
 }

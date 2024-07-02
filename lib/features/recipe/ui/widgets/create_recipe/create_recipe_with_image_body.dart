@@ -8,6 +8,10 @@ part 'ingredients_section.dart';
 part 'stable_ingredients_section.dart';
 part 'option_container.dart';
 part 'stable_ingredients_list.dart';
+part 'create_recipe_title.dart';
+part 'background_container.dart';
+part 'dietary_restriction_section.dart';
+part 'dietary_restriction_list.dart';
 class CreateRecipeWithImageBody extends StatelessWidget {
   const CreateRecipeWithImageBody({super.key});
   @override
@@ -19,10 +23,15 @@ class CreateRecipeWithImageBody extends StatelessWidget {
           leadingWidth: 40,
           title: Text(context.local.createRecipe),
         ),
-        verticalSliverSpace(20),
+        verticalSliverSpace(10),
+        const _CreateRecipeTitle(),
+        verticalSliverSpace(10),
         const _IngredientsSection(),
         verticalSliverSpace(20),
-        const _StableIngredientsSection()
+        const _StableIngredientsSection(),
+        verticalSliverSpace(20),
+        const _DietaryRestrictionSection(),
+
       ],
     );
   }

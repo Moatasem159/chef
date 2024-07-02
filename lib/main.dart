@@ -14,7 +14,6 @@ void main() async {
   await setupGetIt();
   loggedInUser = getIt<Box<FirebaseUserModel>>().get(AppConstants.loggedInUser);
   final bool isOnboardingSkipped = await SharedPrefHelper.getBool(AppConstants.skippedOnboarding);
-
   final bool isUserLoggedIn = loggedInUser == null ? false : true;
   runApp(
     ChefBot(
