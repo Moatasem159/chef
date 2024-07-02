@@ -3,8 +3,8 @@ class SlideFromDownToUpWithFading extends PageRouteBuilder {
   SlideFromDownToUpWithFading({
     super.settings,
     required super.pageBuilder,
-    super.transitionDuration = const Duration(milliseconds: 500),
-    super.reverseTransitionDuration = const Duration(milliseconds: 500),
+    super.transitionDuration = const Duration(milliseconds: 400),
+    super.reverseTransitionDuration = const Duration(milliseconds: 400),
   }) : super(
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             Tween<Offset> slide =

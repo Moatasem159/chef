@@ -48,5 +48,14 @@
   "recipeDialogPart2": " and don't know what to make",
   "justTakePic": "Just take a picture",
   "createRecipe": "Create a recipe",
-  "haveTheseIngredients": "I have these ingredients:"
+  "haveTheseIngredients": "I have these ingredients:",
+  "haveStableIngredient": "I also have these stable ingredients:",
+  "soil": "soil",
+  "butter": "butter",
+  "flour": "flour",
+  "salt": "salt",
+  "pepper": "pepper",
+  "sugar": "sugar",
+  "milk": "milk",
+  "vinegar": "vinegar"
 }
