@@ -12,6 +12,7 @@ class _AddMoreContextSection extends StatelessWidget {
           border: Border.all(color: Colors.grey, width: 1),
         ),
         child: TextFormField(
+          controller: context.read<CreateRecipeCubit>().controller,
           maxLines: null,
           decoration:InputDecoration(
             border: InputBorder.none,

@@ -26,3 +26,32 @@ class _StableIngredientsSection extends StatelessWidget {
     );
   }
 }
+
+class _StableIngredientsList extends StatelessWidget {
+  const _StableIngredientsList();
+
+  @override
+  Widget build(BuildContext context) {
+    final List<String> ingredients = [
+      context.local.soil,
+      context.local.butter,
+      context.local.flour,
+      context.local.salt,
+      context.local.pepper,
+      context.local.sugar,
+      context.local.milk,
+      context.local.vinegar,
+    ];
+    return Wrap(
+      children: List.generate(
+        ingredients.length,
+        (index) => _OptionContainer(
+          title: ingredients[index],
+          changed: ((bool, String) value) {
+            context.read<CreateRecipeCubit>().chooseStableIngredient(value);
+          },
+        ),
+      ),
+    );
+  }
+}

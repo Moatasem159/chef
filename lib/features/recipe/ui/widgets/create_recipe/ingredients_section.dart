@@ -38,11 +38,13 @@ class _ImageList extends StatelessWidget {
           current is RemoveImageLoadingState,
       builder: (context, state) {
         return Wrap(
-          children: context
-              .read<CreateRecipeCubit>()
-              .images
-              .map((e) => _ImageContainer(image: e))
-              .toList(),
+          children: List.generate(
+            growable: true,
+            context.read<CreateRecipeCubit>().images.length,
+            (index) => _ImageContainer(
+              image: context.read<CreateRecipeCubit>().images[index],
+            ),
+          ),
         );
       },
     );

@@ -26,3 +26,32 @@ class _DietaryRestrictionSection extends StatelessWidget {
     );
   }
 }
+
+class _DietaryRestrictionList extends StatelessWidget {
+  const _DietaryRestrictionList();
+
+  @override
+  Widget build(BuildContext context) {
+    final List<String> dietaryRestriction = [
+      context.local.vegetarian,
+      context.local.dairyFree,
+      context.local.lowCarb,
+      context.local.wheatAllergy,
+      context.local.nutAllergy,
+      context.local.soyAllergy,
+      context.local.fishAllergy,
+      context.local.keto,
+    ];
+    return Wrap(
+      children: List.generate(
+        dietaryRestriction.length,
+        (index) => _OptionContainer(
+          title: dietaryRestriction[index],
+          changed: ((bool, String) value) {
+            context.read<CreateRecipeCubit>().chooseDietaryRestriction(value);
+          },
+        ),
+      ),
+    );
+  }
+}

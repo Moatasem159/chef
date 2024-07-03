@@ -26,3 +26,30 @@ class _CuisinesSection extends StatelessWidget {
     );
   }
 }
+class _CuisineList extends StatelessWidget {
+  const _CuisineList();
+  @override
+  Widget build(BuildContext context) {
+    final List<String> dietaryRestriction = [
+      context.local.italian,
+      context.local.indian,
+      context.local.egyptian,
+      context.local.chinese,
+      context.local.french,
+      context.local.japanese,
+      context.local.american,
+      context.local.turkish,
+    ];
+    return Wrap(
+      children: List.generate(
+        dietaryRestriction.length,
+        (index) => _OptionContainer(
+          title: dietaryRestriction[index],
+          changed: ((bool, String) value) {
+            context.read<CreateRecipeCubit>().chooseCuisines(value);
+          },
+        ),
+      ),
+    );
+  }
+}

@@ -3,7 +3,6 @@ import 'package:chef/core/themes/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 abstract class AppTheme {
   static final InputBorder _textFormFieldBorder = OutlineInputBorder(
       borderRadius: BorderRadius.circular(12),
@@ -84,6 +83,11 @@ abstract class AppTheme {
         color: Colors.white,
       ),
     ),
+      scrollbarTheme:  const ScrollbarThemeData(
+        thumbColor: WidgetStatePropertyAll(AppColors.primaryLightColor),
+        thickness: WidgetStatePropertyAll(3),
+        radius: Radius.circular(5),
+      )
   );
   static final ThemeData darkTheme = ThemeData(
     scaffoldBackgroundColor: AppColors.scaffoldDarkBackground,
@@ -158,6 +162,11 @@ abstract class AppTheme {
         color: Colors.white,
       ),
     ),
+    scrollbarTheme:  const ScrollbarThemeData(
+      thumbColor: WidgetStatePropertyAll(AppColors.primaryDarkColor),
+      thickness: WidgetStatePropertyAll(3),
+      radius: Radius.circular(5),
+    )
   );
 
   static SystemUiOverlayStyle systemUiOverlayStyle(BuildContext context) =>
