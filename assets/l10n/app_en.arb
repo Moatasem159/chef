@@ -43,6 +43,9 @@
     }
   },
   "recipeSubtitle": "Ready to discover new recipes ?",
+  "discover": "Discover",
+  "recipes": "Recipes",
+  "settings": "Settings",
   "recipeDialogPart1": "You have the ",
   "ingredients": "Ingredients",
   "recipeDialogPart2": " and don't know what to make",

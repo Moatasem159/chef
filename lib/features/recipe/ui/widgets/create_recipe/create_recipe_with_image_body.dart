@@ -48,11 +48,12 @@ class CreateRecipeWithImageBody extends StatelessWidget {
           slivers: [
             SliverAppBar(
               pinned: true,
-              leadingWidth: 40,
-              titleTextStyle: AppTextStyles.style16SemiBold,
+              leadingWidth: 45,
+              titleTextStyle: AppTextStyles.style16SemiBold.copyWith(
+                color: context.isDark?Colors.white:Colors.black
+              ),
               title: Text(context.local.createRecipe),
             ),
-            verticalSliverSpace(10),
             const _CreateRecipeTitle(),
             verticalSliverSpace(10),
             const _IngredientsSection(),

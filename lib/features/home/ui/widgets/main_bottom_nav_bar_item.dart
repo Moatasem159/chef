@@ -1,55 +1,32 @@
 part of 'main_bottom_nav_bar.dart';
 
-class MainBottomNavBarItem extends StatelessWidget {
+class _MainBottomNavigationBarIcon extends StatelessWidget {
   final IconData icon;
-  final int index;
   final int currentIndex;
-  final ValueChanged<int>? onTap;
+  final int iconIndex;
 
-  const MainBottomNavBarItem({
-    super.key,
-    required this.icon,
-    required this.index,
+  const _MainBottomNavigationBarIcon({
     required this.currentIndex,
-    required this.onTap,
+    required this.icon,
+    required this.iconIndex,
   });
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        onTap!.call(index);
-      },
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 250),
-        width: context.screenWidth / 5,
-        height: context.screenHeight * 0.055,
-        decoration: BoxDecoration(
-          color: currentIndex == index
-              ? context.isDark
-                  ? Colors.white10
-                  : Colors.black12
+    return DecoratedBox(
+      decoration: BoxDecoration(
+          color: currentIndex == iconIndex
+              ? context.theme.colorScheme.secondary.withOpacity(0.3)
               : Colors.transparent,
-          border: Border(
-            bottom: BorderSide(
-              color: currentIndex == index
-                  ? context.theme.primaryColor
-                  : Colors.transparent,
-              width: 2,
-            ),
-            top: BorderSide(
-              color: currentIndex == index
-                  ? context.theme.primaryColor
-                  : Colors.transparent,
-              width: 2,
-            ),
-          ),
-        ),
-        child: Icon(
-          icon,
-          color:
-              currentIndex == index ? context.theme.primaryColor : Colors.grey,
-        ),
+          borderRadius: BorderRadius.circular(15)),
+      child: AnimatedPadding(
+        duration: const Duration(milliseconds: 800),
+        curve: Curves.fastLinearToSlowEaseIn,
+        padding: currentIndex == iconIndex
+            ? const EdgeInsets.symmetric(horizontal: 20)
+            : EdgeInsets.zero,
+        child: Container(
+            margin: const EdgeInsets.symmetric(vertical: 4), child: Icon(icon)),
       ),
     );
   }

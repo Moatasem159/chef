@@ -3,6 +3,7 @@ import 'package:chef/core/themes/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 abstract class AppTheme {
   static final InputBorder _textFormFieldBorder = OutlineInputBorder(
       borderRadius: BorderRadius.circular(12),
@@ -77,18 +78,25 @@ abstract class AppTheme {
       ),
     ),
     appBarTheme: const AppBarTheme(
-      elevation: 7,
-      titleSpacing: 5,
-      backgroundColor: AppColors.primaryLightColor,
-      iconTheme: IconThemeData(
-        color: Colors.white,
-      ),
+      titleSpacing: 0,
+      backgroundColor: AppColors.scaffoldLightBackground,
+      surfaceTintColor: Colors.transparent,
     ),
     scrollbarTheme: const ScrollbarThemeData(
-        thumbColor: WidgetStatePropertyAll(AppColors.primaryLightColor),
-        thickness: WidgetStatePropertyAll(3),
-        radius: Radius.circular(5),
-      ),
+      thumbColor: WidgetStatePropertyAll(AppColors.primaryLightColor),
+      thickness: WidgetStatePropertyAll(3),
+      radius: Radius.circular(5),
+    ),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      elevation: 0,
+      backgroundColor: AppColors.scaffoldLightBackground,
+      selectedItemColor: AppColors.primaryLightColor,
+      unselectedItemColor: Colors.grey,
+      type: BottomNavigationBarType.fixed,
+      landscapeLayout: BottomNavigationBarLandscapeLayout.centered,
+      selectedLabelStyle: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.w600),
+      unselectedLabelStyle: GoogleFonts.poppins(fontSize: 12,),
+    ),
   );
   static final ThemeData darkTheme = ThemeData(
     scaffoldBackgroundColor: AppColors.scaffoldDarkBackground,
@@ -157,17 +165,23 @@ abstract class AppTheme {
       ),
     ),
     appBarTheme: const AppBarTheme(
-      elevation: 7,
-      titleSpacing: 5,
-      backgroundColor: AppColors.primaryDarkColor,
-      iconTheme: IconThemeData(
-        color: Colors.white,
-      ),
+      titleSpacing: 0,
+      backgroundColor: AppColors.scaffoldDarkBackground,
+      surfaceTintColor: Colors.transparent,
     ),
-    scrollbarTheme:  const ScrollbarThemeData(
+    scrollbarTheme: const ScrollbarThemeData(
       thumbColor: WidgetStatePropertyAll(AppColors.primaryDarkColor),
       thickness: WidgetStatePropertyAll(3),
       radius: Radius.circular(5),
+    ),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      elevation: 0,
+      backgroundColor: AppColors.scaffoldDarkBackground,
+      unselectedItemColor: Colors.grey,
+      type: BottomNavigationBarType.fixed,
+      landscapeLayout: BottomNavigationBarLandscapeLayout.centered,
+      selectedLabelStyle: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.w600),
+      unselectedLabelStyle: GoogleFonts.poppins(fontSize: 12,),
     ),
   );
 

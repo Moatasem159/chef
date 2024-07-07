@@ -37,6 +37,6 @@ abstract class AppTextStyles {
   );
   static final TextStyle style14SemiBold = GoogleFonts.poppins(
     fontSize: 14.sp,
-    fontWeight: FontWeight.w700,
+    fontWeight: FontWeight.w500,
   );
 }

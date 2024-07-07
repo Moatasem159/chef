@@ -1,3 +1,4 @@
+
 import 'package:chef/core/themes/app_theme.dart';
 import 'package:chef/features/gallery/ui/screens/gallery_screen.dart';
 import 'package:chef/features/home/ui/widgets/main_bottom_nav_bar.dart';
@@ -14,13 +15,14 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  late final List<Widget> screens;
-  late int currentIndex;
+  late int _currentIndex;
+  late final List<Widget> _screens;
+
   @override
   void initState() {
     super.initState();
-    currentIndex = 0;
-    screens = [
+    _currentIndex = 0;
+    _screens = [
       const RecipeScreen(),
       const GalleryScreen(),
       const AccountScreen(),
@@ -29,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void dispose() {
-    screens.clear();
+    _screens.clear();
     super.dispose();
   }
 
@@ -37,14 +39,14 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: AppTheme.systemUiOverlayStyle(context),
-      child:  SafeArea(
+      child: SafeArea(
         child: Scaffold(
-          body: screens.elementAt(currentIndex),
-          bottomNavigationBar: MainBottomNavbar(
-            currentIndex: currentIndex,
+          body: _screens.elementAt(_currentIndex),
+          bottomNavigationBar: MainBottomNavigationBar(
+            currentIndex: _currentIndex,
             onTap: (value) {
               setState(() {
-                currentIndex = value;
+                _currentIndex = value;
               });
             },
           ),

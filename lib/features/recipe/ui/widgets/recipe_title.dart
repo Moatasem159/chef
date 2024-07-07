@@ -12,9 +12,7 @@ class _RecipeTitle extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(context.local.hello(loggedInUser!.name!),
-                  style: AppTextStyles.style14SemiBold.copyWith(
-                      fontWeight: FontWeight.w400
-                  ),
+                  style: AppTextStyles.style14SemiBold,
                 ),
                 verticalSpace(4),
                 Text(
