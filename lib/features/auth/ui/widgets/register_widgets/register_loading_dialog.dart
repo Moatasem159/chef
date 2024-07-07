@@ -32,10 +32,10 @@ class _RegisterLoadingDialog extends StatelessWidget {
         }
       },
       child: PopScope(
-        canPop: true,
+        canPop: false,
         child: Transform.scale(
-          scaleX: 0.4,
-          scaleY: 0.4,
+          scaleX: 0.5,
+          scaleY: 0.5,
           child: AlertDialog.adaptive(
             contentPadding: const EdgeInsets.all(30),
             content: BlocBuilder<RegisterCubit, RegisterStates>(

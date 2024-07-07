@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:convert';
-
 import 'package:chef/core/errors/error_handler.dart';
 import 'package:chef/core/errors/firebase_exception_codes.dart';
 import 'package:chef/core/extension/string_extension.dart';
@@ -22,10 +21,14 @@ class RecipeRepository {
     if (await _networkInfo.isConnected) {
       try {
         final GenerateContentResponse? response = await _geminiClient.generateContent(prompt);
-        if (response!.text == ExceptionCodes.imageError) {
+        if (response!.text!.trim() == ExceptionCodes.imageError) {
           return FirebaseResult.failure(ErrorHandler.handle(ExceptionCodes.imageError));
+        } else if (response.text!.trim() == ExceptionCodes.noImageError) {
+          return FirebaseResult.failure(
+              ErrorHandler.handle(ExceptionCodes.noImageError));
         } else {
-          final json = jsonDecode(response.text!.cleanJson());
+          final String validaJson=response.text!.cleanJson();
+          final json = jsonDecode(validaJson);
           final RecipeResponseModel recipe = RecipeResponseModel.fromJson(json);
           return FirebaseResult.success(recipe);
         }

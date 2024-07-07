@@ -107,7 +107,7 @@ class _RegisterFormState extends State<_RegisterForm> {
                   .validate()) {
                 context.read<RegisterCubit>().register();
                 showAdaptiveDialog(
-                  barrierDismissible: true,
+                  barrierDismissible: false,
                   context: context,
                   builder: (_) {
                     return BlocProvider<RegisterCubit>.value(

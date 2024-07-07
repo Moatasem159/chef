@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:camera/camera.dart';
+import 'package:chef/features/recipe/ui/widgets/create_recipe/create_recipe_loading_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:chef/core/extension/spacing.dart';
 import 'package:chef/core/utils/app_text_styles.dart';
@@ -9,6 +10,7 @@ import 'package:chef/core/extension/context_extensions.dart';
 import 'package:chef/core/widgets/main_button_with_text.dart';
 import 'package:chef/features/recipe/logic/create_recipe_cubit/create_recipe_cubit.dart';
 import 'package:chef/features/recipe/ui/widgets/create_recipe/choose_image_dialog/choose_image_dialog.dart';
+
 part 'reset_button.dart';
 
 part 'submit_button.dart';
@@ -41,7 +43,6 @@ class CreateRecipeWithImageBody extends StatelessWidget {
     return ScrollConfiguration(
       behavior: const ScrollBehavior().copyWith(overscroll: false),
       child: Scrollbar(
-
         child: CustomScrollView(
           physics: const ClampingScrollPhysics(),
           slivers: [

@@ -89,8 +89,8 @@ class CreateRecipeCubit extends Cubit<CreateRecipeStates> {
 Recommend a recipe for me based on the provided image/s.
 The recipe should only contain real, edible ingredients.
 speak to male
-IF THERE ARE NO IMAGES ATTACHED ,OR IF THE IMAGES DOES NOT CONTAIN FOOD ITEMS,RESPOND EXACTLY WITH:
-${ExceptionCodes.imageError}
+IF THERE ARE NO IMAGES ATTACHED RESPOND EXACTLY WITH:${ExceptionCodes.noImageError}
+IF THE IMAGES DOES NOT CONTAIN FOOD ITEMS RESPOND EXACTLY WITH:${ExceptionCodes.imageError}
 Adhere to food safety and handling best practices like ensuring that poultry is fully cooked.
 I'm in the mood for the following types of cuisine: $chosenCuisines,
 I have the following dietary restrictions: $chosenDietaryRestriction
@@ -105,7 +105,7 @@ ${controller.text.isNotEmpty ? controller.text : ''} ''';
   }
 
   final String format = '''
-Return the recipe as valid JSON using the following structure:
+RETURN THE RECIPE AS VALID JSON USING THE FOLLOWING STRUCTURE:
 {
  "id": \$uniqueId,
   "english_recipe":{

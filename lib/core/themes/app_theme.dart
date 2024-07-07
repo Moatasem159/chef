@@ -72,6 +72,7 @@ abstract class AppTheme {
       backgroundColor: AppColors.scaffoldLightBackground,
       contentTextStyle: GoogleFonts.poppins(
         fontWeight: FontWeight.w500,
+        fontSize: 14,
         color: Colors.black,
       ),
     ),
@@ -83,11 +84,11 @@ abstract class AppTheme {
         color: Colors.white,
       ),
     ),
-      scrollbarTheme:  const ScrollbarThemeData(
+    scrollbarTheme: const ScrollbarThemeData(
         thumbColor: WidgetStatePropertyAll(AppColors.primaryLightColor),
         thickness: WidgetStatePropertyAll(3),
         radius: Radius.circular(5),
-      )
+      ),
   );
   static final ThemeData darkTheme = ThemeData(
     scaffoldBackgroundColor: AppColors.scaffoldDarkBackground,
@@ -151,6 +152,7 @@ abstract class AppTheme {
       backgroundColor: AppColors.scaffoldDarkBackground,
       contentTextStyle: GoogleFonts.poppins(
         color: Colors.white,
+        fontSize: 14,
         fontWeight: FontWeight.w500,
       ),
     ),
@@ -166,7 +168,7 @@ abstract class AppTheme {
       thumbColor: WidgetStatePropertyAll(AppColors.primaryDarkColor),
       thickness: WidgetStatePropertyAll(3),
       radius: Radius.circular(5),
-    )
+    ),
   );
 
   static SystemUiOverlayStyle systemUiOverlayStyle(BuildContext context) =>

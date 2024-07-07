@@ -83,5 +83,6 @@
   "chooseImage": "Choose image",
   "fromCamera": "From camera",
   "fromGallery": "From gallery",
-  "imageErrorMsg": "The recipe request either does not contain images, or does not contain images of food items. I cannot recommend a recipe."
+  "noImageError": "The recipe request does not contain images.",
+  "imageError": "The recipe request does not contain images of food items, I can't recommend recipe."
 }

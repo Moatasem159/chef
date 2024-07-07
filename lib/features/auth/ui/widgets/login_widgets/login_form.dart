@@ -73,7 +73,7 @@ class _LoginFormState extends State<_LoginForm> {
               if (context.read<LoginCubit>().formKey.currentState!.validate()) {
                 context.read<LoginCubit>().loginWithEmailAndPassword(saveLogin);
                 showAdaptiveDialog(
-                  barrierDismissible: true,
+                  barrierDismissible: false,
                   context: context,
                   builder: (_) {
                     return BlocProvider<LoginCubit>.value(

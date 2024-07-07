@@ -10,6 +10,16 @@ class _SubmitButton extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 10),
       onTap: () {
         context.read<CreateRecipeCubit>().generateRecipe();
+        showAdaptiveDialog(
+          barrierDismissible: false,
+          context: context,
+          builder: (_) {
+            return BlocProvider<CreateRecipeCubit>.value(
+              value: context.read<CreateRecipeCubit>(),
+              child: const CreateRecipeLoadingDialog()
+            );
+          },
+        );
       },
       child: Row(
         children: [

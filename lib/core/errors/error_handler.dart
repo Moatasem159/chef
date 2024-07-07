@@ -22,8 +22,10 @@ class ErrorHandler implements Exception {
       return context.local.emailAlreadyInUse;
     } else if (code == ExceptionCodes.invalidCredential) {
       return context.local.loginError;
+    } else if (code == ExceptionCodes.noImageError) {
+      return context.local.noImageError;
     } else if (code == ExceptionCodes.imageError) {
-      return context.local.imageErrorMsg;
+      return context.local.imageError;
     } else if (code == ExceptionCodes.internetConnection) {
       return "Internet connection";
     } else {
