@@ -12,14 +12,20 @@ class ErrorHandler implements Exception {
       code = error.code;
       debugPrint(error.message);
       debugPrint(error.code);
+    } else {
+      code = error.toString();
     }
   }
 
   static String handleErrorMessages(BuildContext context, String code) {
-    if (code == FirebaseExceptionCodes.emailAlreadyExists) {
+    if (code == ExceptionCodes.emailAlreadyExists) {
       return context.local.emailAlreadyInUse;
-    } else if (code == FirebaseExceptionCodes.invalidCredential) {
+    } else if (code == ExceptionCodes.invalidCredential) {
       return context.local.loginError;
+    } else if (code == ExceptionCodes.imageError) {
+      return context.local.imageErrorMsg;
+    } else if (code == ExceptionCodes.internetConnection) {
+      return "Internet connection";
     } else {
       return code;
     }

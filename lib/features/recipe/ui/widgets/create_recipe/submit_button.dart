@@ -8,7 +8,9 @@ class _SubmitButton extends StatelessWidget {
     return MainButtonWithText(
       foregroundColor: Colors.white,
       padding: const EdgeInsets.symmetric(horizontal: 10),
-      onTap: () {},
+      onTap: () {
+        context.read<CreateRecipeCubit>().generateRecipe();
+      },
       child: Row(
         children: [
           const Icon(Icons.send_rounded),

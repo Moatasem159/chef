@@ -1,3 +1,4 @@
+import 'package:chef/core/di/dependency_injection.dart';
 import 'package:chef/core/extension/context_extensions.dart';
 import 'package:chef/core/themes/app_colors.dart';
 import 'package:chef/core/themes/app_theme.dart';
@@ -13,7 +14,7 @@ class CreateRecipeWithImageScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<CreateRecipeCubit>(
-      create: (context) => CreateRecipeCubit(),
+      create: (context) => CreateRecipeCubit(getIt()),
       child: AnnotatedRegion<SystemUiOverlayStyle>(
         value: AppTheme.systemUiOverlayStyle(context).copyWith(
           statusBarColor: context.isDark
