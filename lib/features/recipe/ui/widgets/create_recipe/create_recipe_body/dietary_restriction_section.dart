@@ -32,26 +32,29 @@ class _DietaryRestrictionList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<String> dietaryRestriction = [
-      context.local.vegetarian,
-      context.local.dairyFree,
-      context.local.lowCarb,
-      context.local.wheatAllergy,
-      context.local.nutAllergy,
-      context.local.soyAllergy,
-      context.local.fishAllergy,
-      context.local.keto,
-    ];
-    return Wrap(
-      children: List.generate(
-        dietaryRestriction.length,
-        (index) => _OptionContainer(
-          title: dietaryRestriction[index],
-          changed: ((bool, String) value) {
-            context.read<CreateRecipeCubit>().chooseDietaryRestriction(value);
-          },
-        ),
-      ),
+    return BlocBuilder<CreateRecipeCubit, CreateRecipeStates>(
+      buildWhen: (previous, current) =>
+          current is ChooseDietaryRestrictionSuccessState ||
+          current is ChooseDietaryRestrictionLoadingState ||
+          current is ResetOptionsLoadingState ||
+          current is ResetOptionsSuccessState,
+      builder: (context, state) {
+        return Wrap(
+          children: List.generate(
+            context.read<CreateRecipeCubit>().dietaryRestriction.length,
+            (index) => _OptionContainer(
+              option:
+                  context.read<CreateRecipeCubit>().dietaryRestriction[index],
+              onTap: () {
+                context.read<CreateRecipeCubit>().chooseDietaryRestriction(
+                    context
+                        .read<CreateRecipeCubit>()
+                        .dietaryRestriction[index]);
+              },
+            ),
+          ),
+        );
+      },
     );
   }
 }

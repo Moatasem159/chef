@@ -5,12 +5,17 @@ import 'package:chef/features/recipe/ui/widgets/create_recipe/create_recipe_scre
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 class CreateRecipeWithImageScreen extends StatelessWidget {
   const CreateRecipeWithImageScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider<CreateRecipeCubit>(
-      create: (context) => CreateRecipeCubit(getIt()),
+      create: (_) => CreateRecipeCubit(getIt())
+        ..getIngredients(context)
+        ..getDietaryRestriction(context)
+        ..getCuisines(context),
       child: AnnotatedRegion<SystemUiOverlayStyle>(
         value: AppTheme.systemUiOverlayStyle(context),
         child: const CreateRecipeScreenBody(),

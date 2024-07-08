@@ -32,26 +32,27 @@ class _StableIngredientsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<String> ingredients = [
-      context.local.soil,
-      context.local.butter,
-      context.local.flour,
-      context.local.salt,
-      context.local.pepper,
-      context.local.sugar,
-      context.local.milk,
-      context.local.vinegar,
-    ];
-    return Wrap(
-      children: List.generate(
-        ingredients.length,
-        (index) => _OptionContainer(
-          title: ingredients[index],
-          changed: ((bool, String) value) {
-            context.read<CreateRecipeCubit>().chooseStableIngredient(value);
-          },
-        ),
-      ),
+    return BlocBuilder<CreateRecipeCubit, CreateRecipeStates>(
+      buildWhen: (previous, current) =>
+          current is ChooseStableIngredientLoadingState ||
+          current is ChooseStableIngredientSuccessState ||
+          current is ResetOptionsLoadingState ||
+          current is ResetOptionsSuccessState,
+      builder: (context, state) {
+        return Wrap(
+          children: List.generate(
+            context.read<CreateRecipeCubit>().stableIngredients.length,
+            (index) => _OptionContainer(
+              option:
+                  context.read<CreateRecipeCubit>().stableIngredients[index],
+              onTap: () {
+                context.read<CreateRecipeCubit>().chooseStableIngredient(
+                    context.read<CreateRecipeCubit>().stableIngredients[index]);
+              },
+            ),
+          ),
+        );
+      },
     );
   }
 }

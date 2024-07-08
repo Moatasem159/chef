@@ -1,4 +1,4 @@
-part of 'create_recipe_with_image_body.dart';
+part of '../create_recipe_with_image_body.dart';
 
 class _IngredientsSection extends StatelessWidget {
   const _IngredientsSection();
@@ -35,7 +35,9 @@ class _ImageList extends StatelessWidget {
           current is PickImageSuccessState ||
           current is PickImageLoadingState ||
           current is RemoveImageSuccessState ||
-          current is RemoveImageLoadingState,
+          current is RemoveImageLoadingState ||
+          current is ResetOptionsLoadingState ||
+          current is ResetOptionsSuccessState,
       builder: (context, state) {
         return Wrap(
           children: List.generate(

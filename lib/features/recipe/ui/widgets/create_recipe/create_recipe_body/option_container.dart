@@ -1,33 +1,14 @@
 part of 'create_recipe_with_image_body.dart';
 
-class _OptionContainer extends StatefulWidget {
-  final String title;
-  final ValueChanged<(bool, String)>? changed;
-
-  const _OptionContainer({required this.title, this.changed});
-
-  @override
-  State<_OptionContainer> createState() => _OptionContainerState();
-}
-
-class _OptionContainerState extends State<_OptionContainer> {
-  late bool checked;
-
-  @override
-  void initState() {
-    super.initState();
-    checked = false;
-  }
+class _OptionContainer extends StatelessWidget {
+  final OptionsModel option;
+  final VoidCallback onTap;
+  const _OptionContainer({required this.option, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        setState(() {
-          checked = !checked;
-          widget.changed?.call((checked, widget.title));
-        });
-      },
+      onTap:onTap,
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
         margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
@@ -35,7 +16,7 @@ class _OptionContainerState extends State<_OptionContainer> {
           color: context.theme.colorScheme.onSecondary,
           border: Border.all(
             width: 1,
-            color: checked
+            color: option.isSelected
                 ? context.theme.colorScheme.primary
                 : Colors.transparent,
           ),
@@ -44,14 +25,14 @@ class _OptionContainerState extends State<_OptionContainer> {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            if (checked) ...[
+            if (option.isSelected) ...[
               const Icon(
                 Icons.done_outlined,
                 size: 20,
               ),
               horizontalSpace(5),
             ],
-            Text(widget.title, style: AppTextStyles.style14Normal),
+            Text(option.name, style: AppTextStyles.style14Normal),
           ],
         ),
       ),

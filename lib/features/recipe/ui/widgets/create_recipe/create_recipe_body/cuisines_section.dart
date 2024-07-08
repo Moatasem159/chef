@@ -26,30 +26,32 @@ class _CuisinesSection extends StatelessWidget {
     );
   }
 }
+
 class _CuisineList extends StatelessWidget {
   const _CuisineList();
+
   @override
   Widget build(BuildContext context) {
-    final List<String> dietaryRestriction = [
-      context.local.italian,
-      context.local.indian,
-      context.local.egyptian,
-      context.local.chinese,
-      context.local.french,
-      context.local.japanese,
-      context.local.american,
-      context.local.turkish,
-    ];
-    return Wrap(
-      children: List.generate(
-        dietaryRestriction.length,
-        (index) => _OptionContainer(
-          title: dietaryRestriction[index],
-          changed: ((bool, String) value) {
-            context.read<CreateRecipeCubit>().chooseCuisines(value);
-          },
-        ),
-      ),
+    return BlocBuilder<CreateRecipeCubit, CreateRecipeStates>(
+      buildWhen: (previous, current) =>
+          current is ChooseCuisinesSuccessState ||
+          current is ChooseCuisinesLoadingState ||
+          current is ResetOptionsLoadingState ||
+          current is ResetOptionsSuccessState,
+      builder: (context, state) {
+        return Wrap(
+          children: List.generate(
+            context.read<CreateRecipeCubit>().cuisines.length,
+            (index) => _OptionContainer(
+              option: context.read<CreateRecipeCubit>().cuisines[index],
+              onTap: () {
+                context.read<CreateRecipeCubit>().chooseCuisines(
+                    context.read<CreateRecipeCubit>().cuisines[index]);
+              },
+            ),
+          ),
+        );
+      },
     );
   }
 }

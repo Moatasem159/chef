@@ -8,7 +8,7 @@ class _ResetButton extends StatelessWidget {
     return MainButtonWithText(
       foregroundColor: Colors.white,
       padding: const EdgeInsets.symmetric(horizontal: 15),
-      onTap: () {},
+      onTap:context.read<CreateRecipeCubit>().resetPrompt,
       child: Row(
         children: [
           const Icon(Icons.restart_alt_rounded),

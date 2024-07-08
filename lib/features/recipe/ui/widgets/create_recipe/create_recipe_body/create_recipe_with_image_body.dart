@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:camera/camera.dart';
+import 'package:chef/features/recipe/data/models/options_model.dart';
 import 'package:chef/features/recipe/ui/widgets/create_recipe/create_recipe_body/choose_image_section/choose_image_dialog/choose_image_dialog.dart';
 import 'package:chef/features/recipe/ui/widgets/create_recipe/create_recipe_body/create_recipe_actions/create_recipe_loading_dialog.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +22,7 @@ part 'option_container.dart';
 
 part 'cuisines_section.dart';
 
-part 'ingredients_section.dart';
+part 'choose_image_section/ingredients_section.dart';
 
 part 'create_recipe_title.dart';
 
