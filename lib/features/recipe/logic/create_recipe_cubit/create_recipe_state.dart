@@ -29,3 +29,9 @@ final class GenerateRecipeErrorState extends CreateRecipeStates {
   final String message;
   const GenerateRecipeErrorState(this.message);
 }
+final class ChangePageLoadingState extends CreateRecipeStates {
+ const ChangePageLoadingState();
+}
+final class ChangePageSuccessState extends CreateRecipeStates {
+ const ChangePageSuccessState();
+}

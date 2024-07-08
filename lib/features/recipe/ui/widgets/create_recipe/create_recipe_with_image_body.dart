@@ -43,33 +43,25 @@ class CreateRecipeWithImageBody extends StatelessWidget {
     return ScrollConfiguration(
       behavior: const ScrollBehavior().copyWith(overscroll: false),
       child: Scrollbar(
-        child: CustomScrollView(
+        child:ListView(
           physics: const ClampingScrollPhysics(),
-          slivers: [
-            SliverAppBar(
-              pinned: true,
-              leadingWidth: 45,
-              titleTextStyle: AppTextStyles.style16SemiBold.copyWith(
-                color: context.isDark?Colors.white:Colors.black
-              ),
-              title: Text(context.local.createRecipe),
-            ),
+          children: [
             const _CreateRecipeTitle(),
-            verticalSliverSpace(10),
+            verticalSpace(10),
             const _IngredientsSection(),
-            verticalSliverSpace(20),
+            verticalSpace(20),
             const _StableIngredientsSection(),
-            verticalSliverSpace(20),
+            verticalSpace(20),
             const _DietaryRestrictionSection(),
-            verticalSliverSpace(20),
+            verticalSpace(20),
             const _CuisinesSection(),
-            verticalSliverSpace(20),
+            verticalSpace(20),
             const _AddMoreContextSection(),
-            verticalSliverSpace(20),
+            verticalSpace(20),
             const _CreateRecipeActions(),
-            verticalSliverSpace(20),
+            verticalSpace(10),
           ],
-        ),
+        )
       ),
     );
   }

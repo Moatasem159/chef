@@ -1,4 +1,4 @@
-part of '../screens/recipe_screen.dart';
+part of '../../screens/recipes_screen.dart';
 class _RecipeTitle extends StatelessWidget {
   const _RecipeTitle();
   @override

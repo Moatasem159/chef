@@ -5,14 +5,12 @@ class _CreateRecipeActions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SliverToBoxAdapter(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          _ResetButton(),
-          _SubmitButton(),
-        ],
-      ),
+    return const Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        _ResetButton(),
+        _SubmitButton(),
+      ],
     );
   }
 }

@@ -1,9 +1,9 @@
 import 'package:chef/core/extension/context_extensions.dart';
+import 'package:chef/core/widgets/custom_bottom_nav_bar_item.dart';
 import 'package:flutter/material.dart';
-part 'main_bottom_nav_bar_item.dart';
+
 class MainBottomNavigationBar extends StatelessWidget {
   final int currentIndex;
-
   final ValueChanged<int> onTap;
 
   const MainBottomNavigationBar({
@@ -24,7 +24,7 @@ class MainBottomNavigationBar extends StatelessWidget {
         currentIndex: currentIndex,
         items: [
           BottomNavigationBarItem(
-            icon: _MainBottomNavigationBarIcon(
+            icon: CustomBottomNavigationBarIcon(
               currentIndex: currentIndex,
               icon: Icons.explore_rounded,
               iconIndex: 0,
@@ -32,7 +32,7 @@ class MainBottomNavigationBar extends StatelessWidget {
             label: context.local.discover,
           ),
           BottomNavigationBarItem(
-            icon: _MainBottomNavigationBarIcon(
+            icon: CustomBottomNavigationBarIcon(
               currentIndex: currentIndex,
               icon: Icons.fastfood_outlined,
               iconIndex: 1,
@@ -40,7 +40,7 @@ class MainBottomNavigationBar extends StatelessWidget {
             label: context.local.recipes,
           ),
           BottomNavigationBarItem(
-            icon: _MainBottomNavigationBarIcon(
+            icon: CustomBottomNavigationBarIcon(
               currentIndex: currentIndex,
               icon: Icons.settings,
               iconIndex: 2,

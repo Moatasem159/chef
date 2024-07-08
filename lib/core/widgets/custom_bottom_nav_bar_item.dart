@@ -1,11 +1,13 @@
-part of 'main_bottom_nav_bar.dart';
+import 'package:chef/core/extension/context_extensions.dart';
+import 'package:flutter/material.dart';
 
-class _MainBottomNavigationBarIcon extends StatelessWidget {
+class CustomBottomNavigationBarIcon extends StatelessWidget {
   final IconData icon;
   final int currentIndex;
   final int iconIndex;
 
-  const _MainBottomNavigationBarIcon({
+  const CustomBottomNavigationBarIcon({
+    super.key,
     required this.currentIndex,
     required this.icon,
     required this.iconIndex,

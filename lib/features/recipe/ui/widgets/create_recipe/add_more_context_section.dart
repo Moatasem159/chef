@@ -4,27 +4,25 @@ class _AddMoreContextSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverToBoxAdapter(
-      child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 10),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          border: Border.all(color: Colors.grey, width: 1),
-        ),
-        child: TextFormField(
-          controller: context.read<CreateRecipeCubit>().controller,
-          maxLines: null,
-          decoration:InputDecoration(
-            border: InputBorder.none,
-            enabledBorder: InputBorder.none,
-            focusedBorder: InputBorder.none,
-            constraints: BoxConstraints(
-              minHeight: 120.h,
-              maxHeight:160.h,
-            ),
-            hintText: context.local.addAdditionalContext,
-            fillColor: Colors.transparent,
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 10),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(color: Colors.grey, width: 1),
+      ),
+      child: TextFormField(
+        controller: context.read<CreateRecipeCubit>().textController,
+        maxLines: null,
+        decoration:InputDecoration(
+          border: InputBorder.none,
+          enabledBorder: InputBorder.none,
+          focusedBorder: InputBorder.none,
+          constraints: BoxConstraints(
+            minHeight: 120.h,
+            maxHeight:160.h,
           ),
+          hintText: context.local.addAdditionalContext,
+          fillColor: Colors.transparent,
         ),
       ),
     );

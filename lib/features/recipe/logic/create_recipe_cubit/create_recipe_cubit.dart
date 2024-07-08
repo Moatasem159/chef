@@ -4,6 +4,8 @@ import 'package:chef/core/helpers/firebase_result.dart';
 import 'package:chef/features/recipe/data/models/prompt_data_model.dart';
 import 'package:chef/features/recipe/data/models/recipe_response_model.dart';
 import 'package:chef/features/recipe/data/repository/recipe_repository.dart';
+import 'package:chef/features/recipe/ui/screens/recipe_screen.dart';
+import 'package:chef/features/recipe/ui/widgets/create_recipe/create_recipe_with_image_body.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
@@ -13,13 +15,18 @@ part 'create_recipe_state.dart';
 class CreateRecipeCubit extends Cubit<CreateRecipeStates> {
   final RecipeRepository _recipeRepository;
 
-  CreateRecipeCubit(this._recipeRepository)
-      : super(const CreateRecipeInitial());
+  CreateRecipeCubit(this._recipeRepository) : super(const CreateRecipeInitial());
   List<XFile> images = [XFile("")];
   List<String> chosenStableIngredients = [];
   List<String> chosenDietaryRestriction = [];
   List<String> chosenCuisines = [];
-  final TextEditingController controller = TextEditingController();
+  int currentIndex=0;
+  final TextEditingController textController = TextEditingController();
+
+  List<Widget> screens=[
+    const CreateRecipeWithImageBody(),
+    const RecipeScreen(),
+  ];
 
   picImage(ImageSource source) async {
     emit(const PickImageLoadingState());
@@ -84,6 +91,13 @@ class CreateRecipeCubit extends Cubit<CreateRecipeStates> {
     );
   }
 
+  changePage(int value){
+    emit(const ChangePageLoadingState());
+    currentIndex=value;
+    emit(const ChangePageSuccessState());
+  }
+
+
   String get mainPrompt {
     return '''
 Recommend a recipe for me based on the provided image/s.
@@ -101,13 +115,13 @@ After providing the recipe, add an descriptions that creatively explains why the
 List out any ingredients that are potential allergens.
 Provide a summary of how many people the recipe will serve and the the nutritional information per serving.
 
-${controller.text.isNotEmpty ? controller.text : ''} ''';
+${textController.text.isNotEmpty ? textController.text : ''} ''';
   }
 
   final String format = '''
-RETURN THE RECIPE AS VALID JSON USING THE FOLLOWING STRUCTURE:
+YOU MUST RETURN THE RECIPE AS VALID JSON USING THE FOLLOWING STRUCTURE:
 {
- "id": \$uniqueId,
+  "id": \$uniqueId,
   "english_recipe":{
   "title": \$recipeTitle,
   "ingredients": \$ingredients,

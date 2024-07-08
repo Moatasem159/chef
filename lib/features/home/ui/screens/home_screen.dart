@@ -2,7 +2,7 @@
 import 'package:chef/core/themes/app_theme.dart';
 import 'package:chef/features/gallery/ui/screens/gallery_screen.dart';
 import 'package:chef/features/home/ui/widgets/main_bottom_nav_bar.dart';
-import 'package:chef/features/recipe/ui/screens/recipe_screen.dart';
+import 'package:chef/features/recipe/ui/screens/recipes_screen.dart';
 import 'package:chef/features/user/ui/screens/account_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -23,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
     _currentIndex = 0;
     _screens = [
-      const RecipeScreen(),
+      const RecipesScreen(),
       const GalleryScreen(),
       const AccountScreen(),
     ];

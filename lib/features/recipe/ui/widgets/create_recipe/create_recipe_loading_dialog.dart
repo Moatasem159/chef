@@ -17,7 +17,7 @@ class CreateRecipeLoadingDialog extends StatelessWidget {
           Future.delayed(const Duration(milliseconds: 1000)).then(
             (_) {
               context.pop();
-              // TODO:Navigation
+              context.read<CreateRecipeCubit>().changePage(1);
             },
           );
         }
