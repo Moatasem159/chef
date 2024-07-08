@@ -1,4 +1,4 @@
-part of 'create_recipe_with_image_body.dart';
+part of '../create_recipe_with_image_body.dart';
 
 class _ImageContainer extends StatelessWidget {
   final XFile? image;

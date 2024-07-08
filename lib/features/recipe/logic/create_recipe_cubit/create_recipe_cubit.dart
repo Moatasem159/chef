@@ -4,14 +4,12 @@ import 'package:chef/core/helpers/firebase_result.dart';
 import 'package:chef/features/recipe/data/models/prompt_data_model.dart';
 import 'package:chef/features/recipe/data/models/recipe_response_model.dart';
 import 'package:chef/features/recipe/data/repository/recipe_repository.dart';
-import 'package:chef/features/recipe/ui/screens/recipe_screen.dart';
-import 'package:chef/features/recipe/ui/widgets/create_recipe/create_recipe_with_image_body.dart';
+import 'package:chef/features/recipe/ui/widgets/create_recipe/recipe_body/recipe_body.dart';
+import 'package:chef/features/recipe/ui/widgets/create_recipe/create_recipe_body/create_recipe_with_image_body.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
-
 part 'create_recipe_state.dart';
-
 class CreateRecipeCubit extends Cubit<CreateRecipeStates> {
   final RecipeRepository _recipeRepository;
 
@@ -25,7 +23,7 @@ class CreateRecipeCubit extends Cubit<CreateRecipeStates> {
 
   List<Widget> screens=[
     const CreateRecipeWithImageBody(),
-    const RecipeScreen(),
+    const RecipeBody(),
   ];
 
   picImage(ImageSource source) async {

@@ -8,17 +8,17 @@ import 'package:chef/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-part '../widgets/recipes_screen/recipe_with_pic_card.dart';
-part '../widgets/recipes_screen/recipe_title.dart';
-class RecipesScreen extends StatelessWidget {
-  const RecipesScreen({super.key});
+part '../widgets/discover_screen/discover_title.dart';
+part '../widgets/discover_screen/recipe_with_pic_card.dart';
+class DiscoverScreen extends StatelessWidget {
+  const DiscoverScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
       physics: const BouncingScrollPhysics(),
       slivers: [
         verticalSliverSpace(30),
-        const _RecipeTitle(),
+        const _DiscoverTitle(),
         verticalSliverSpace(20),
         const _RecipeWithPicCard()
       ],

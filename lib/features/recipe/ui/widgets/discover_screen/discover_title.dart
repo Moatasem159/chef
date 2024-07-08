@@ -1,6 +1,6 @@
-part of '../../screens/recipes_screen.dart';
-class _RecipeTitle extends StatelessWidget {
-  const _RecipeTitle();
+part of '../../screens/discover_screen.dart';
+class _DiscoverTitle extends StatelessWidget {
+  const _DiscoverTitle();
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
