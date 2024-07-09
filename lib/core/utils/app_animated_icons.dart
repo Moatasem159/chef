@@ -12,4 +12,7 @@ abstract class AppAnimatedIcons {
   static String error(BuildContext context) => context.isDark
       ? "assets/images/icons/animations/error_dark_mode.json"
       : "assets/images/icons/animations/error_light_mode.json";
+  static String emptyRecipe(BuildContext context) => context.isDark
+      ? "assets/images/icons/animations/empty_recipe_dark_mode.json"
+      : "assets/images/icons/animations/empty_recipe_light_mode.json";
 }

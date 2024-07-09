@@ -19,15 +19,14 @@ class CreateRecipeCubit extends Cubit<CreateRecipeStates> {
 
   CreateRecipeCubit(this._recipeRepository)
       : super(const CreateRecipeInitial());
-
   int currentIndex = 0;
   final TextEditingController textController = TextEditingController();
-
   List<Widget> screens = [
     const CreateRecipeWithImageBody(),
     const RecipeBody(),
   ];
   List<XFile> images = [XFile("")];
+
   picImage(ImageSource source) async {
     emit(const PickImageLoadingState());
     ImagePicker picker = ImagePicker();
@@ -45,6 +44,7 @@ class CreateRecipeCubit extends Cubit<CreateRecipeStates> {
   }
 
   late List<OptionsModel> stableIngredients;
+
   getIngredients(BuildContext context) {
     stableIngredients = [
       OptionsModel(context.local.soil, false),
@@ -65,7 +65,9 @@ class CreateRecipeCubit extends Cubit<CreateRecipeStates> {
         .isSelected = !value.isSelected;
     emit(const ChooseStableIngredientSuccessState());
   }
+
   late List<OptionsModel> dietaryRestriction;
+
   getDietaryRestriction(BuildContext context) {
     dietaryRestriction = [
       OptionsModel(context.local.vegetarian, false),
@@ -86,7 +88,9 @@ class CreateRecipeCubit extends Cubit<CreateRecipeStates> {
         .isSelected = !value.isSelected;
     emit(const ChooseDietaryRestrictionSuccessState());
   }
+
   late List<OptionsModel> cuisines;
+
   getCuisines(BuildContext context) {
     cuisines = [
       OptionsModel(context.local.egyptian, false),
@@ -102,9 +106,8 @@ class CreateRecipeCubit extends Cubit<CreateRecipeStates> {
 
   chooseCuisines(OptionsModel value) {
     emit(const ChooseCuisinesLoadingState());
-    cuisines
-        .firstWhere((element) => element.name == value.name)
-        .isSelected = !value.isSelected;
+    cuisines.firstWhere((element) => element.name == value.name).isSelected =
+        !value.isSelected;
     emit(const ChooseCuisinesSuccessState());
   }
 
@@ -143,7 +146,8 @@ class CreateRecipeCubit extends Cubit<CreateRecipeStates> {
       }
     }
     return PromptDataModel(
-      textInput: mainPrompt(chosenStableIngredients, chosenDietaryRestriction,chosenCuisines),
+      textInput: mainPrompt(
+          chosenStableIngredients, chosenDietaryRestriction, chosenCuisines),
       images: files,
       selectedBasicIngredients: chosenStableIngredients,
       selectedCuisines: chosenCuisines,
@@ -236,4 +240,15 @@ don't put trailing commas after the last elements in the lists
 in arabic recipe translate every field
 don't write english words in arabic recipe
 ''';
+
+  @override
+  Future<void> close() {
+    screens.clear();
+    images.clear();
+    stableIngredients.clear();
+    dietaryRestriction.clear();
+    cuisines.clear();
+    textController.dispose();
+    return super.close();
+  }
 }

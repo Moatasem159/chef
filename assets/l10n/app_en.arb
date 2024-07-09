@@ -9,7 +9,7 @@
   "fullName": "Full Name",
   "rememberMe": "Remember me",
   "forgotPassword": "Forgot password?",
-  "login" : "Login",
+  "login": "Login",
   "orSignIn": "Or sign in with",
   "orSignUp": "Or sign up with",
   "google": "Google",
@@ -73,13 +73,13 @@
   "nutAllergy": "nut allergy",
   "soyAllergy": "soy allergy",
   "fishAllergy": "fish allergy",
-  "keto":"keto",
+  "keto": "keto",
   "italian": "italian",
   "indian": "indian",
   "egyptian": "egyptian",
   "chinese": "chinese",
   "french": "french",
-  "japanese":"japanese",
+  "japanese": "japanese",
   "american": "american",
   "turkish": "turkish",
   "addAdditionalContext": "Add additionally context.....",
@@ -89,5 +89,6 @@
   "fromCamera": "From camera",
   "fromGallery": "From gallery",
   "noImageError": "The recipe request does not contain images.",
-  "imageError": "The recipe request does not contain images of food items, I can't recommend recipe."
+  "imageError": "The recipe request does not contain images of food items, I can't recommend recipe.",
+  "emptyRecipeMsg": "Nothing to show here."
 }
