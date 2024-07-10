@@ -49,7 +49,16 @@
   "info": "Info",
   "settings": "Settings",
   "recipeDialogPart1": "You have the ",
-  "ingredients": "Ingredients",
+  "ingredients": "Ingredients{symbol}",
+  "@ingredients": {
+    "description": "add symbol",
+    "placeholders": {
+      "symbol": {
+        "type": "String",
+        "example": ":"
+      }
+    }
+  },
   "recipeDialogPart2": " and don't know what to make",
   "justTakePic": "Just take a picture",
   "createRecipe": "Create a recipe",
@@ -90,5 +99,15 @@
   "fromGallery": "From gallery",
   "noImageError": "The recipe request does not contain images.",
   "imageError": "The recipe request does not contain images of food items, I can't recommend recipe.",
-  "emptyRecipeMsg": "Nothing to show here."
+  "emptyRecipeMsg": "Nothing to show here.",
+  "allergens": "Allergens:",
+  "servings": "Servings:",
+  "cuisines": "Cuisines:",
+  "nutritionPerServing": "Nutrition per serving:",
+  "calories": "calories",
+  "fat": "fat",
+  "carbohydrate": "carbohydrates",
+  "protein": "protein",
+  "instruction": "Instruction:",
+  "saveRecipe": "Save Recipe"
 }

@@ -17,13 +17,13 @@ dependencies:
   # Add the Cupertino Icons to your application.
   cupertino_icons: ^1.0.8
   # Flutter plugin for Firebase Core, enabling connecting to multiple Firebase apps.
-  firebase_core: ^3.1.1
+  firebase_core: ^3.2.0
   # Flutter plugin for Firebase Authentication.
-  firebase_auth: ^5.1.1
+  firebase_auth: ^5.1.2
   # Flutter plugin for Firebase Cloud Storage.
-  firebase_storage: ^12.1.0
+  firebase_storage: ^12.1.1
   # Flutter plugin for Cloud Firestore.
-  cloud_firestore: ^5.0.2
+  cloud_firestore: ^5.1.0
   # SDK enables to use Google's generative AI models (like Gemini).
   google_generative_ai: ^0.4.3
   # A package to use fonts from fonts.google.com.

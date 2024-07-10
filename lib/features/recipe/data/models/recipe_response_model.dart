@@ -1,5 +1,7 @@
+import 'package:chef/core/extension/context_extensions.dart';
 import 'package:chef/features/recipe/data/models/nutrition_information_model.dart';
 import 'package:chef/features/recipe/data/models/recipe_model.dart';
+import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart' hide JsonKey;
 import 'package:json_annotation/json_annotation.dart';
 
@@ -19,4 +21,9 @@ class RecipeResponseModel with _$RecipeResponseModel {
 
   factory RecipeResponseModel.fromJson(Map<String, dynamic> json) =>
       _$RecipeResponseModelFromJson(json);
+}
+
+extension RecipeResponseModelExtension on RecipeResponseModel{
+  RecipeModel getRecipe(BuildContext context)=>
+   context.lang=="en"? englishRecipe:arabicRecipe;
 }

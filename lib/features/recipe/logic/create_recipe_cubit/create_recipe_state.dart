@@ -29,9 +29,7 @@ final class GenerateRecipeLoadingState extends CreateRecipeStates {
 }
 
 final class GenerateRecipeSuccessState extends CreateRecipeStates {
-  final RecipeResponseModel recipe;
-
-  const GenerateRecipeSuccessState(this.recipe);
+  const GenerateRecipeSuccessState();
 }
 
 final class GenerateRecipeErrorState extends CreateRecipeStates {

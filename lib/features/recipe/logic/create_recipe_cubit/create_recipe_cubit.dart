@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:chef/core/errors/error_handler.dart';
 import 'package:chef/core/errors/firebase_exception_codes.dart';
 import 'package:chef/core/extension/context_extensions.dart';
@@ -20,6 +22,7 @@ class CreateRecipeCubit extends Cubit<CreateRecipeStates> {
   CreateRecipeCubit(this._recipeRepository)
       : super(const CreateRecipeInitial());
   int currentIndex = 0;
+  RecipeResponseModel ?recipe;
   final TextEditingController textController = TextEditingController();
   List<Widget> screens = [
     const CreateRecipeWithImageBody(),
@@ -116,8 +119,11 @@ class CreateRecipeCubit extends Cubit<CreateRecipeStates> {
     final FirebaseResult<RecipeResponseModel> response =
         await _recipeRepository.generateContent(prompt: _buildPrompt());
     response.when(
-      success: (RecipeResponseModel data) =>
-          emit(GenerateRecipeSuccessState(data)),
+      success: (RecipeResponseModel recipeData) {
+        log(recipeData.toString());
+        recipe=recipeData;
+        return emit(const GenerateRecipeSuccessState());
+      },
       failure: (ErrorHandler errorHandler) =>
           emit(GenerateRecipeErrorState(errorHandler.code)),
     );
@@ -234,15 +240,18 @@ YOU MUST RETURN THE RECIPE AS VALID JSON USING THE FOLLOWING STRUCTURE:
   
 uniqueId should be unique and of type String. 
 title, description, cuisine, allergens, and servings should be of String type. 
+if cuisines and allergens more than one word separate between them with ","
 ingredients and instructions should be of type List<String>.
+Make ingredients with quantities.
 nutritionInformation should be of type Map<String, String>.
-don't put trailing commas after the last elements in the lists
+don't put trailing commas after the last elements in the lists.
 in arabic recipe translate every field
 don't write english words in arabic recipe
 ''';
 
   @override
   Future<void> close() {
+    recipe=null;
     screens.clear();
     images.clear();
     stableIngredients.clear();

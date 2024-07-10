@@ -81,6 +81,7 @@ abstract class AppTheme {
       titleSpacing: 0,
       backgroundColor: AppColors.scaffoldLightBackground,
       surfaceTintColor: Colors.transparent,
+      iconTheme: IconThemeData(color: Colors.black)
     ),
     scrollbarTheme: const ScrollbarThemeData(
       thumbColor: WidgetStatePropertyAll(AppColors.primaryLightColor),
@@ -167,6 +168,7 @@ abstract class AppTheme {
     appBarTheme: const AppBarTheme(
       titleSpacing: 0,
       backgroundColor: AppColors.scaffoldDarkBackground,
+      iconTheme: IconThemeData(color: Colors.white),
       surfaceTintColor: Colors.transparent,
     ),
     scrollbarTheme: const ScrollbarThemeData(

@@ -31,7 +31,7 @@ class _RecipeWithPicCard extends StatelessWidget {
                             .copyWith(color: Colors.white),
                         children: [
                           TextSpan(
-                            text: context.local.ingredients,
+                            text: context.local.ingredients(""),
                             style: AppTextStyles.style14SemiBold,
                           ),
                           TextSpan(
