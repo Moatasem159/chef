@@ -109,5 +109,8 @@
   "carbohydrate": "carbohydrates",
   "protein": "protein",
   "instruction": "Instruction:",
-  "saveRecipe": "Save Recipe"
+  "saveRecipe": "Save Recipe",
+  "savedRecipeMsg": "Recipe Saved successfully",
+  "removeRecipeMsg": "Recipe Removed successfully",
+  "saveRecipeError": "Something went wrong"
 }

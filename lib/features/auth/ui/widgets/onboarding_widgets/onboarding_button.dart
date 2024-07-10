@@ -13,7 +13,7 @@ class _OnboardingButton extends StatelessWidget {
             context.pushNamedAndRemoveUntil(Routes.loginRoute,predicate: (Route route) => false);
           },);
         },
-        title: context.local.letsGetStarted,
+        title: context.locale.letsGetStarted,
       ),
     );
   }

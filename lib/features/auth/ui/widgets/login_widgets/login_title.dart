@@ -8,14 +8,14 @@ class _LoginTitle extends StatelessWidget {
       children: [
         verticalSpace(60),
         Text(
-          context.local.loginTitle,
+          context.locale.loginTitle,
           style: AppTextStyles.style28Bold.copyWith(
             color: Colors.white,
           ),
         ),
         verticalSpace(10),
         Text(
-          context.local.loginSubTitle,
+          context.locale.loginSubTitle,
           style: AppTextStyles.style16Light.copyWith(
             color: Colors.grey[100],
           ),

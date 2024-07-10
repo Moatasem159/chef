@@ -21,9 +21,13 @@ NutritionInformationModel _$NutritionInformationModelFromJson(
 
 /// @nodoc
 mixin _$NutritionInformationModel {
+  @HiveType(typeId: 0)
   String get calories => throw _privateConstructorUsedError;
+  @HiveType(typeId: 1)
   String get fat => throw _privateConstructorUsedError;
+  @HiveType(typeId: 2)
   String get carbohydrates => throw _privateConstructorUsedError;
+  @HiveType(typeId: 3)
   String get protein => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -39,7 +43,10 @@ abstract class $NutritionInformationModelCopyWith<$Res> {
       _$NutritionInformationModelCopyWithImpl<$Res, NutritionInformationModel>;
   @useResult
   $Res call(
-      {String calories, String fat, String carbohydrates, String protein});
+      {@HiveType(typeId: 0) String calories,
+      @HiveType(typeId: 1) String fat,
+      @HiveType(typeId: 2) String carbohydrates,
+      @HiveType(typeId: 3) String protein});
 }
 
 /// @nodoc
@@ -92,7 +99,10 @@ abstract class _$$NutritionInformationModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String calories, String fat, String carbohydrates, String protein});
+      {@HiveType(typeId: 0) String calories,
+      @HiveType(typeId: 1) String fat,
+      @HiveType(typeId: 2) String carbohydrates,
+      @HiveType(typeId: 3) String protein});
 }
 
 /// @nodoc
@@ -135,24 +145,35 @@ class __$$NutritionInformationModelImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$NutritionInformationModelImpl implements _NutritionInformationModel {
-  const _$NutritionInformationModelImpl(
-      {required this.calories,
-      required this.fat,
-      required this.carbohydrates,
-      required this.protein});
+
+@JsonSerializable(explicitToJson: true)
+@HiveType(typeId: 3, adapterName: "NutritionInformationAdapter")
+class _$NutritionInformationModelImpl extends _NutritionInformationModel {
+  _$NutritionInformationModelImpl(
+      {@HiveType(typeId: 0) this.calories = "",
+      @HiveType(typeId: 1) this.fat = "",
+      @HiveType(typeId: 2) this.carbohydrates = "",
+      @HiveType(typeId: 3) this.protein = ""})
+      : super._();
 
   factory _$NutritionInformationModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$NutritionInformationModelImplFromJson(json);
 
   @override
+  @JsonKey()
+  @HiveType(typeId: 0)
   final String calories;
   @override
+  @JsonKey()
+  @HiveType(typeId: 1)
   final String fat;
   @override
+  @JsonKey()
+  @HiveType(typeId: 2)
   final String carbohydrates;
   @override
+  @JsonKey()
+  @HiveType(typeId: 3)
   final String protein;
 
   @override
@@ -193,23 +214,29 @@ class _$NutritionInformationModelImpl implements _NutritionInformationModel {
   }
 }
 
-abstract class _NutritionInformationModel implements NutritionInformationModel {
-  const factory _NutritionInformationModel(
-      {required final String calories,
-      required final String fat,
-      required final String carbohydrates,
-      required final String protein}) = _$NutritionInformationModelImpl;
+abstract class _NutritionInformationModel extends NutritionInformationModel {
+  factory _NutritionInformationModel(
+          {@HiveType(typeId: 0) final String calories,
+          @HiveType(typeId: 1) final String fat,
+          @HiveType(typeId: 2) final String carbohydrates,
+          @HiveType(typeId: 3) final String protein}) =
+      _$NutritionInformationModelImpl;
+  _NutritionInformationModel._() : super._();
 
   factory _NutritionInformationModel.fromJson(Map<String, dynamic> json) =
       _$NutritionInformationModelImpl.fromJson;
 
   @override
+  @HiveType(typeId: 0)
   String get calories;
   @override
+  @HiveType(typeId: 1)
   String get fat;
   @override
+  @HiveType(typeId: 2)
   String get carbohydrates;
   @override
+  @HiveType(typeId: 3)
   String get protein;
   @override
   @JsonKey(ignore: true)

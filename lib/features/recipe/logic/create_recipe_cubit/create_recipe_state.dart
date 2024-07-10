@@ -77,3 +77,27 @@ final class ResetOptionsLoadingState extends CreateRecipeStates {
 final class ResetOptionsSuccessState extends CreateRecipeStates {
   const ResetOptionsSuccessState();
 }
+
+final class SaveRecipeLoadingState extends CreateRecipeStates {
+  const SaveRecipeLoadingState();
+}
+
+final class SaveRecipeSuccessState extends CreateRecipeStates {
+  const SaveRecipeSuccessState();
+}
+
+final class RemoveRecipeSuccessState extends CreateRecipeStates {
+  const RemoveRecipeSuccessState();
+}
+
+final class SaveRecipeErrorState extends CreateRecipeStates {
+  final String message;
+
+  const SaveRecipeErrorState(this.message);
+}
+
+final class RemoveRecipeErrorState extends CreateRecipeStates {
+  final String message;
+
+  const RemoveRecipeErrorState(this.message);
+}

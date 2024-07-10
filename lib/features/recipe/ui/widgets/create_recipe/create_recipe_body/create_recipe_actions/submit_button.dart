@@ -25,7 +25,7 @@ class _SubmitButton extends StatelessWidget {
         children: [
           const Icon(Icons.send_rounded),
           horizontalSpace(5),
-          Text(context.local.submit),
+          Text(context.locale.submit),
         ],
       ),
     );

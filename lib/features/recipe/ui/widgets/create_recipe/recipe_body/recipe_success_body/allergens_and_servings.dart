@@ -24,17 +24,17 @@ class _AllergensAndServings extends StatelessWidget {
         ),
         verticalSpace(10),
         _RecipeDetailsWidget(
-          title: context.local.allergens,
+          title: context.locale.allergens,
           value: recipe.getRecipe(context).allergens,
         ),
         verticalSpace(10),
         _RecipeDetailsWidget(
-          title: context.local.cuisines,
+          title: context.locale.cuisines,
           value: recipe.getRecipe(context).cuisine,
         ),
         verticalSpace(10),
         _RecipeDetailsWidget(
-          title: context.local.servings,
+          title: context.locale.servings,
           value: recipe.getRecipe(context).servings,
         ),
         verticalSpace(10),

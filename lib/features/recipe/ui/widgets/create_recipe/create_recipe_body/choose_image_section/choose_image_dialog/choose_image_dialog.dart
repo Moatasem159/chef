@@ -29,7 +29,7 @@ class ChooseImageDialog extends StatelessWidget {
             const Icon(Icons.photo_library_outlined),
             horizontalSpace(14),
             Text(
-              context.local.chooseImage,
+              context.locale.chooseImage,
               style: AppTextStyles.style14Normal,
             ),
           ],
@@ -41,7 +41,7 @@ class ChooseImageDialog extends StatelessWidget {
               onTap: () {
                 context.read<CreateRecipeCubit>().picImage(ImageSource.camera);
               },
-              title: context.local.fromCamera,
+              title: context.locale.fromCamera,
               icon: Icons.camera,
             ),
             verticalSpace(5),
@@ -49,7 +49,7 @@ class ChooseImageDialog extends StatelessWidget {
               onTap: () {
                 context.read<CreateRecipeCubit>().picImage(ImageSource.gallery);
               },
-              title: context.local.fromGallery,
+              title: context.locale.fromGallery,
               icon: Icons.image_outlined,
             ),
           ],

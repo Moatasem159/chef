@@ -6,7 +6,7 @@ class _ForgotPassword extends StatelessWidget {
     return MainTextButton(
       onTap: () {},
       foregroundColor: context.theme.primaryColor,
-      title: context.local.forgotPassword,
+      title: context.locale.forgotPassword,
     );
   }
 }

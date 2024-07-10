@@ -50,20 +50,20 @@ class _RegisterFormState extends State<_RegisterForm> {
           AuthTextFormField(
             validator: (value) {
               if (value.isNullOrEmpty()) {
-                return context.local.validName;
+                return context.locale.validName;
               }
               return null;
             },
             controller: context.read<RegisterCubit>().nameController,
-            hintText: context.local.fullName,
+            hintText: context.locale.fullName,
           ),
           verticalSpace(15),
           AuthTextFormField(
             controller: context.read<RegisterCubit>().emailController,
-            hintText: context.local.email,
+            hintText: context.locale.email,
             validator: (value) {
               if (value.isNullOrEmpty() || !AppRegex.isEmailValid(value!)) {
-                return context.local.validEmail;
+                return context.locale.validEmail;
               }
               return null;
             },
@@ -82,17 +82,17 @@ class _RegisterFormState extends State<_RegisterForm> {
                 isObscureText ? Icons.visibility_off : Icons.visibility,
               ),
             ),
-            hintText: context.local.password,
+            hintText: context.locale.password,
             validator: (value) {
               if (value.isNullOrEmpty()) {
-                return context.local.validPassword;
+                return context.locale.validPassword;
               }
               if (!hasLowercase ||
                   !hasUppercase ||
                   !hasMinLength ||
                   !hasSpecialCharacters ||
                   !hasNumber) {
-                return context.local.validPassword;
+                return context.locale.validPassword;
               }
               return null;
             },
@@ -118,7 +118,7 @@ class _RegisterFormState extends State<_RegisterForm> {
                 );
               }
             },
-            title: context.local.createAccount,
+            title: context.locale.createAccount,
             buttonSize: Size.fromWidth(context.screenWidth),
           ),
           verticalSpace(15),

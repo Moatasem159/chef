@@ -20,12 +20,19 @@ RecipeModel _$RecipeModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$RecipeModel {
+  @HiveType(typeId: 0)
   String get title => throw _privateConstructorUsedError;
+  @HiveType(typeId: 1)
   String get description => throw _privateConstructorUsedError;
+  @HiveType(typeId: 2)
   String get cuisine => throw _privateConstructorUsedError;
+  @HiveType(typeId: 3)
   String get allergens => throw _privateConstructorUsedError;
+  @HiveType(typeId: 4)
   String get servings => throw _privateConstructorUsedError;
+  @HiveType(typeId: 5)
   List<String> get instructions => throw _privateConstructorUsedError;
+  @HiveType(typeId: 6)
   List<String> get ingredients => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -41,13 +48,13 @@ abstract class $RecipeModelCopyWith<$Res> {
       _$RecipeModelCopyWithImpl<$Res, RecipeModel>;
   @useResult
   $Res call(
-      {String title,
-      String description,
-      String cuisine,
-      String allergens,
-      String servings,
-      List<String> instructions,
-      List<String> ingredients});
+      {@HiveType(typeId: 0) String title,
+      @HiveType(typeId: 1) String description,
+      @HiveType(typeId: 2) String cuisine,
+      @HiveType(typeId: 3) String allergens,
+      @HiveType(typeId: 4) String servings,
+      @HiveType(typeId: 5) List<String> instructions,
+      @HiveType(typeId: 6) List<String> ingredients});
 }
 
 /// @nodoc
@@ -113,13 +120,13 @@ abstract class _$$RecipeModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String title,
-      String description,
-      String cuisine,
-      String allergens,
-      String servings,
-      List<String> instructions,
-      List<String> ingredients});
+      {@HiveType(typeId: 0) String title,
+      @HiveType(typeId: 1) String description,
+      @HiveType(typeId: 2) String cuisine,
+      @HiveType(typeId: 3) String allergens,
+      @HiveType(typeId: 4) String servings,
+      @HiveType(typeId: 5) List<String> instructions,
+      @HiveType(typeId: 6) List<String> ingredients});
 }
 
 /// @nodoc
@@ -175,34 +182,49 @@ class __$$RecipeModelImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$RecipeModelImpl implements _RecipeModel {
-  const _$RecipeModelImpl(
-      {required this.title,
-      required this.description,
-      required this.cuisine,
-      required this.allergens,
-      required this.servings,
-      required final List<String> instructions,
-      required final List<String> ingredients})
+
+@JsonSerializable(explicitToJson: true)
+@HiveType(typeId: 2)
+class _$RecipeModelImpl extends _RecipeModel {
+  _$RecipeModelImpl(
+      {@HiveType(typeId: 0) this.title = "",
+      @HiveType(typeId: 1) this.description = "",
+      @HiveType(typeId: 2) this.cuisine = "",
+      @HiveType(typeId: 3) this.allergens = "",
+      @HiveType(typeId: 4) this.servings = "",
+      @HiveType(typeId: 5) final List<String> instructions = const [],
+      @HiveType(typeId: 6) final List<String> ingredients = const []})
       : _instructions = instructions,
-        _ingredients = ingredients;
+        _ingredients = ingredients,
+        super._();
 
   factory _$RecipeModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$RecipeModelImplFromJson(json);
 
   @override
+  @JsonKey()
+  @HiveType(typeId: 0)
   final String title;
   @override
+  @JsonKey()
+  @HiveType(typeId: 1)
   final String description;
   @override
+  @JsonKey()
+  @HiveType(typeId: 2)
   final String cuisine;
   @override
+  @JsonKey()
+  @HiveType(typeId: 3)
   final String allergens;
   @override
+  @JsonKey()
+  @HiveType(typeId: 4)
   final String servings;
   final List<String> _instructions;
   @override
+  @JsonKey()
+  @HiveType(typeId: 5)
   List<String> get instructions {
     if (_instructions is EqualUnmodifiableListView) return _instructions;
     // ignore: implicit_dynamic_type
@@ -211,6 +233,8 @@ class _$RecipeModelImpl implements _RecipeModel {
 
   final List<String> _ingredients;
   @override
+  @JsonKey()
+  @HiveType(typeId: 6)
   List<String> get ingredients {
     if (_ingredients is EqualUnmodifiableListView) return _ingredients;
     // ignore: implicit_dynamic_type
@@ -267,32 +291,40 @@ class _$RecipeModelImpl implements _RecipeModel {
   }
 }
 
-abstract class _RecipeModel implements RecipeModel {
-  const factory _RecipeModel(
-      {required final String title,
-      required final String description,
-      required final String cuisine,
-      required final String allergens,
-      required final String servings,
-      required final List<String> instructions,
-      required final List<String> ingredients}) = _$RecipeModelImpl;
+abstract class _RecipeModel extends RecipeModel {
+  factory _RecipeModel(
+      {@HiveType(typeId: 0) final String title,
+      @HiveType(typeId: 1) final String description,
+      @HiveType(typeId: 2) final String cuisine,
+      @HiveType(typeId: 3) final String allergens,
+      @HiveType(typeId: 4) final String servings,
+      @HiveType(typeId: 5) final List<String> instructions,
+      @HiveType(typeId: 6) final List<String> ingredients}) = _$RecipeModelImpl;
+  _RecipeModel._() : super._();
 
   factory _RecipeModel.fromJson(Map<String, dynamic> json) =
       _$RecipeModelImpl.fromJson;
 
   @override
+  @HiveType(typeId: 0)
   String get title;
   @override
+  @HiveType(typeId: 1)
   String get description;
   @override
+  @HiveType(typeId: 2)
   String get cuisine;
   @override
+  @HiveType(typeId: 3)
   String get allergens;
   @override
+  @HiveType(typeId: 4)
   String get servings;
   @override
+  @HiveType(typeId: 5)
   List<String> get instructions;
   @override
+  @HiveType(typeId: 6)
   List<String> get ingredients;
   @override
   @JsonKey(ignore: true)

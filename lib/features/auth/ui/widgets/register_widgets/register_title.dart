@@ -10,14 +10,14 @@ class _RegisterTitle extends StatelessWidget {
       children: [
         verticalSpace(50),
         Text(
-          context.local.createAccount,
+          context.locale.createAccount,
           style: AppTextStyles.style28Bold.copyWith(
             color: Colors.white,
           ),
         ),
         verticalSpace(10),
         Text(
-          context.local.registerDialog,
+          context.locale.registerDialog,
           style: AppTextStyles.style16Light.copyWith(
             color: Colors.grey[100],
           ),

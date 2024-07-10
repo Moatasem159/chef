@@ -17,8 +17,8 @@ class OrSignWith extends StatelessWidget {
               color: Colors.grey[400]),
         ),
         switch (sign) {
-          Sign.signIn => Text(context.local.orSignIn),
-          Sign.signUp => Text(context.local.orSignUp),
+          Sign.signIn => Text(context.locale.orSignIn),
+          Sign.signUp => Text(context.locale.orSignUp),
         },
         Expanded(
           child: Container(

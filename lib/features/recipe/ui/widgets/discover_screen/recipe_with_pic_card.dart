@@ -26,16 +26,16 @@ class _RecipeWithPicCard extends StatelessWidget {
                   width: 160,
                   child: Text.rich(
                     TextSpan(
-                        text: context.local.recipeDialogPart1,
+                        text: context.locale.recipeDialogPart1,
                         style: AppTextStyles.style14Normal
                             .copyWith(color: Colors.white),
                         children: [
                           TextSpan(
-                            text: context.local.ingredients(""),
+                            text: context.locale.ingredients(""),
                             style: AppTextStyles.style14SemiBold,
                           ),
                           TextSpan(
-                            text: context.local.recipeDialogPart2,
+                            text: context.locale.recipeDialogPart2,
                             style: AppTextStyles.style14Normal,
                           )
                         ]),
@@ -50,7 +50,7 @@ class _RecipeWithPicCard extends StatelessWidget {
                   onTap: () {
                     context.pushNamed(Routes.createRecipeRoute);
                   },
-                  title: context.local.justTakePic,
+                  title: context.locale.justTakePic,
                 )
               ],
             ),

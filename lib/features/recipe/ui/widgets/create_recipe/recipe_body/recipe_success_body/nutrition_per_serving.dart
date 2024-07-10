@@ -11,26 +11,26 @@ class _NutritionPerServing extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          context.local.nutritionPerServing,
+          context.locale.nutritionPerServing,
           style: AppTextStyles.style16SemiBold.copyWith(
             color: Colors.white,
           ),
         ),
         verticalSpace(10),
         _NutritionWidget(
-          title: context.local.calories,
+          title: context.locale.calories,
           value: recipe.nutationInformation.calories,
         ),
         _NutritionWidget(
-          title: context.local.fat,
+          title: context.locale.fat,
           value: recipe.nutationInformation.fat,
         ),
         _NutritionWidget(
-          title: context.local.carbohydrate,
+          title: context.locale.carbohydrate,
           value: recipe.nutationInformation.carbohydrates,
         ),
         _NutritionWidget(
-          title: context.local.protein,
+          title: context.locale.protein,
           value: recipe.nutationInformation.protein,
         ),
       ],

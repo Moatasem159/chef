@@ -13,7 +13,7 @@ class _InstructionSection extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            context.local.instruction,
+            context.locale.instruction,
             style: AppTextStyles.style18SemiBold,
           ),
           Column(

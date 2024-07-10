@@ -21,7 +21,7 @@ class _AddMoreContextSection extends StatelessWidget {
             minHeight: 120.h,
             maxHeight:160.h,
           ),
-          hintText: context.local.addAdditionalContext,
+          hintText: context.locale.addAdditionalContext,
           fillColor: Colors.transparent,
         ),
       ),

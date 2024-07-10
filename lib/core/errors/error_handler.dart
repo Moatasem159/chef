@@ -19,13 +19,15 @@ class ErrorHandler implements Exception {
 
   static String handleErrorMessages(BuildContext context, String code) {
     if (code == ExceptionCodes.emailAlreadyExists) {
-      return context.local.emailAlreadyInUse;
+      return context.locale.emailAlreadyInUse;
     } else if (code == ExceptionCodes.invalidCredential) {
-      return context.local.loginError;
+      return context.locale.loginError;
     } else if (code == ExceptionCodes.noImageError) {
-      return context.local.noImageError;
+      return context.locale.noImageError;
     } else if (code == ExceptionCodes.imageError) {
-      return context.local.imageError;
+      return context.locale.imageError;
+    } else if (code == ExceptionCodes.saveRecipeError) {
+      return context.locale.saveRecipeError;
     } else if (code == ExceptionCodes.internetConnection) {
       return "Internet connection";
     } else {

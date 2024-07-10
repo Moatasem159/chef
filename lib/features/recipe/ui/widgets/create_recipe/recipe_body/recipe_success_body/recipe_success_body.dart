@@ -21,7 +21,6 @@ class _RecipeSuccessBody extends StatelessWidget {
             verticalSpace(24),
             _InstructionSection(recipe: recipe),
             verticalSpace(24),
-            //TODO:add buttons
           ],
         ),
       ),

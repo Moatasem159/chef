@@ -13,7 +13,7 @@ class _ResetButton extends StatelessWidget {
         children: [
           const Icon(Icons.restart_alt_rounded),
           horizontalSpace(5),
-          Text(context.local.reset),
+          Text(context.locale.reset),
         ],
       ),
     );

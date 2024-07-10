@@ -20,7 +20,7 @@ class _RememberMe extends StatelessWidget {
           ),
         ),
         Text(
-          context.local.rememberMe,
+          context.locale.rememberMe,
           style: const TextStyle(
             color: Colors.white,
           ),

@@ -29,7 +29,7 @@ class MainBottomNavigationBar extends StatelessWidget {
               icon: Icons.explore_rounded,
               iconIndex: 0,
             ),
-            label: context.local.discover,
+            label: context.locale.discover,
           ),
           BottomNavigationBarItem(
             icon: CustomBottomNavigationBarIcon(
@@ -37,7 +37,7 @@ class MainBottomNavigationBar extends StatelessWidget {
               icon: Icons.fastfood_outlined,
               iconIndex: 1,
             ),
-            label: context.local.recipes,
+            label: context.locale.recipes,
           ),
           BottomNavigationBarItem(
             icon: CustomBottomNavigationBarIcon(
@@ -45,7 +45,7 @@ class MainBottomNavigationBar extends StatelessWidget {
               icon: Icons.settings,
               iconIndex: 2,
             ),
-            label: context.local.settings,
+            label: context.locale.settings,
           ),
         ],
         onTap: onTap,

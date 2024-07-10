@@ -12,8 +12,8 @@ extension ThemesExtension on BuildContext {
 }
 
 extension LocalizationExtensions on BuildContext {
-  AppLocalizations get local => AppLocalizations.of(this)!;
-  String get lang => local.localeName;
+  AppLocalizations get locale => AppLocalizations.of(this)!;
+  String get lang => locale.localeName;
 }
 
 extension NavigationExtentions on BuildContext {

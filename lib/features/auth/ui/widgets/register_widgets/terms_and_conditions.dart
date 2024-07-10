@@ -6,26 +6,26 @@ class _TermsAndConditions extends StatelessWidget {
     return Text.rich(
       textAlign: TextAlign.center,
       TextSpan(
-        text: context.local.byRegister,
+        text: context.locale.byRegister,
         style: AppTextStyles.style14Normal.copyWith(
           color: Colors.grey,
         ),
         children: [
           TextSpan(
-              text: context.local.terms,
+              text: context.locale.terms,
               style: AppTextStyles.style14bold.copyWith(
                   fontSize: 14.sp,
                   color: context.isDark?Colors.white:Colors.black
               )
           ),
           TextSpan(
-            text: context.local.and,
+            text: context.locale.and,
             style: AppTextStyles.style14Normal.copyWith(
               color: Colors.grey,
             ),
           ),
           TextSpan(
-              text: context.local.privacyPolicy,
+              text: context.locale.privacyPolicy,
               style: AppTextStyles.style14bold.copyWith(
                   color: context.isDark?Colors.white:Colors.black
               )

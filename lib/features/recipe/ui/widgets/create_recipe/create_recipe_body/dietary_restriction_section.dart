@@ -12,7 +12,7 @@ class _DietaryRestrictionSection extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(5),
             child: Text(
-              context.local.haveDietaryRestriction,
+              context.locale.haveDietaryRestriction,
               style: AppTextStyles.style16SemiBold.copyWith(
                 color: Colors.grey[600],
                 fontSize: 14.sp,

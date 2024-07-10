@@ -23,7 +23,7 @@ class OnboardingBody extends StatelessWidget {
           top: 200.h,
           left: 50.w,
           child: Text(
-            context.local.onboardingTitle,
+            context.locale.onboardingTitle,
             style: AppTextStyles.style24Bold.copyWith(color: Colors.white),
           ),
         ),
@@ -32,7 +32,7 @@ class OnboardingBody extends StatelessWidget {
           right: 10.w,
           top: 280.h,
           child: Text(
-            context.local.onboardingSubTitle,
+            context.locale.onboardingSubTitle,
             style: AppTextStyles.style16SemiBold.copyWith(
               color: Colors.white,
             ),

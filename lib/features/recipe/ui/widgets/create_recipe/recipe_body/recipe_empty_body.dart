@@ -16,7 +16,7 @@ class _RecipeEmptyBody extends StatelessWidget {
             icon: AppAnimatedIcons.emptyRecipe(context),
           ),
           Text(
-            context.local.emptyRecipeMsg,
+            context.locale.emptyRecipeMsg,
             style: AppTextStyles.style16SemiBold,
           ),
         ],

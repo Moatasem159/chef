@@ -6,7 +6,7 @@ class _CreateRecipeTitle extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
       child: Text(
-        context.local.createARecipe,
+        context.locale.createARecipe,
         style: AppTextStyles.style16SemiBold.copyWith(color: Colors.grey),
       ),
     );

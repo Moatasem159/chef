@@ -11,7 +11,7 @@ class GoogleButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MainButtonWithText(
-      title: context.local.google,
+      title: context.locale.google,
       foregroundColor: Colors.black,
       backgroundColor: Colors.white,
       overlayColor: Colors.grey.withOpacity(0.3),
@@ -23,7 +23,7 @@ class GoogleButton extends StatelessWidget {
           SvgPicture.asset(AppAssets.googleIcon),
           horizontalSpace(8),
           Text(
-            context.local.google,
+            context.locale.google,
           ),
         ],
       ),

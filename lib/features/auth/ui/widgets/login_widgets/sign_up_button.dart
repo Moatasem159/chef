@@ -7,10 +7,10 @@ class _SignUpButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text.rich(
       TextSpan(
-        text: context.local.doesNotHaveAccount,
+        text: context.locale.doesNotHaveAccount,
         children: [
           TextSpan(
-            text: context.local.signup,
+            text: context.locale.signup,
             recognizer: TapGestureRecognizer()..onTap = () {
               context.pushNamed(Routes.registerRoute);
             },

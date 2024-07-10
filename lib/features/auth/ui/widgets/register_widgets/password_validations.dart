@@ -24,27 +24,27 @@ class PasswordValidations extends StatelessWidget {
     return Column(
       children: [
         _ValidationRow(
-          text: context.local.lowerLetter,
+          text: context.locale.lowerLetter,
           hasValidated: hasLowerCase,
         ),
         verticalSpace(2),
         _ValidationRow(
-          text: context.local.upperLetter,
+          text: context.locale.upperLetter,
           hasValidated: hasUpperCase,
         ),
         verticalSpace(2),
         _ValidationRow(
-          text: context.local.specialLetter,
+          text: context.locale.specialLetter,
           hasValidated: hasSpecialCharacters,
         ),
         verticalSpace(2),
         _ValidationRow(
-          text: context.local.numberNum,
+          text: context.locale.numberNum,
           hasValidated: hasNumber,
         ),
         verticalSpace(2),
         _ValidationRow(
-          text: context.local.numberCount,
+          text: context.locale.numberCount,
           hasValidated: hasMinLength,
         ),
       ],

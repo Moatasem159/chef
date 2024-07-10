@@ -24,7 +24,7 @@ class _InfoWidget extends StatelessWidget {
             child: Text(
               value,
               maxLines: null,
-              style: AppTextStyles.style16Normal,
+              style: AppTextStyles.style14Normal,
             ),
           ),
         ],

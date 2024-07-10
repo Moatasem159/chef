@@ -5,6 +5,7 @@ import 'package:chef/core/helpers/constants.dart';
 import 'package:chef/core/helpers/shared_preferences_helper.dart';
 import 'package:chef/core/router/app_router.dart';
 import 'package:chef/features/auth/data/models/firebase_user.dart';
+import 'package:chef/features/recipe/data/models/recipe_response_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -18,6 +19,9 @@ void main() async {
   loggedInUser = getIt<Box<FirebaseUserModel>>().get(AppConstants.loggedInUser);
   final bool isOnboardingSkipped = await SharedPrefHelper.getBool(AppConstants.skippedOnboarding);
   final bool isUserLoggedIn = loggedInUser == null ? false : true;
+  if(!isUserLoggedIn){
+    await getIt<Box<RecipeResponseModel>>().clear();
+  }
   runApp(
     ChefBot(
       appRouter: AppRouter(

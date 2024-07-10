@@ -11,12 +11,12 @@ class _DiscoverTitle extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(context.local.hello(loggedInUser!.name!),
+                Text(context.locale.hello(loggedInUser!.name!),
                   style: AppTextStyles.style14SemiBold,
                 ),
                 verticalSpace(4),
                 Text(
-                  context.local.recipeSubtitle,
+                  context.locale.recipeSubtitle,
                   style: AppTextStyles.style14Normal.copyWith(
                       color: Colors.grey,
                       fontSize: 12,

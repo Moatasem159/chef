@@ -31,7 +31,7 @@ class CreateRecipeBottomNavBar extends StatelessWidget {
                   icon: Icons.info_outline_rounded,
                   iconIndex: 0,
                 ),
-                label: context.local.info,
+                label: context.locale.info,
               ),
               BottomNavigationBarItem(
                 icon: CustomBottomNavigationBarIcon(
@@ -39,7 +39,7 @@ class CreateRecipeBottomNavBar extends StatelessWidget {
                   icon: Icons.insert_drive_file_outlined,
                   iconIndex: 1,
                 ),
-                label: context.local.recipe,
+                label: context.locale.recipe,
               ),
             ],
           ),

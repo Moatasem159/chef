@@ -22,13 +22,15 @@ class CreateRecipeCubit extends Cubit<CreateRecipeStates> {
   CreateRecipeCubit(this._recipeRepository)
       : super(const CreateRecipeInitial());
   int currentIndex = 0;
-  RecipeResponseModel ?recipe;
+  RecipeResponseModel? recipe;
   final TextEditingController textController = TextEditingController();
   List<Widget> screens = [
     const CreateRecipeWithImageBody(),
     const RecipeBody(),
   ];
   List<XFile> images = [XFile("")];
+
+  bool saved = false;
 
   picImage(ImageSource source) async {
     emit(const PickImageLoadingState());
@@ -50,14 +52,14 @@ class CreateRecipeCubit extends Cubit<CreateRecipeStates> {
 
   getIngredients(BuildContext context) {
     stableIngredients = [
-      OptionsModel(context.local.soil, false),
-      OptionsModel(context.local.butter, false),
-      OptionsModel(context.local.flour, false),
-      OptionsModel(context.local.salt, false),
-      OptionsModel(context.local.pepper, false),
-      OptionsModel(context.local.sugar, false),
-      OptionsModel(context.local.milk, false),
-      OptionsModel(context.local.vinegar, false),
+      OptionsModel(context.locale.soil, false),
+      OptionsModel(context.locale.butter, false),
+      OptionsModel(context.locale.flour, false),
+      OptionsModel(context.locale.salt, false),
+      OptionsModel(context.locale.pepper, false),
+      OptionsModel(context.locale.sugar, false),
+      OptionsModel(context.locale.milk, false),
+      OptionsModel(context.locale.vinegar, false),
     ];
   }
 
@@ -73,14 +75,14 @@ class CreateRecipeCubit extends Cubit<CreateRecipeStates> {
 
   getDietaryRestriction(BuildContext context) {
     dietaryRestriction = [
-      OptionsModel(context.local.vegetarian, false),
-      OptionsModel(context.local.dairyFree, false),
-      OptionsModel(context.local.lowCarb, false),
-      OptionsModel(context.local.wheatAllergy, false),
-      OptionsModel(context.local.nutAllergy, false),
-      OptionsModel(context.local.soyAllergy, false),
-      OptionsModel(context.local.fishAllergy, false),
-      OptionsModel(context.local.keto, false),
+      OptionsModel(context.locale.vegetarian, false),
+      OptionsModel(context.locale.dairyFree, false),
+      OptionsModel(context.locale.lowCarb, false),
+      OptionsModel(context.locale.wheatAllergy, false),
+      OptionsModel(context.locale.nutAllergy, false),
+      OptionsModel(context.locale.soyAllergy, false),
+      OptionsModel(context.locale.fishAllergy, false),
+      OptionsModel(context.locale.keto, false),
     ];
   }
 
@@ -96,14 +98,14 @@ class CreateRecipeCubit extends Cubit<CreateRecipeStates> {
 
   getCuisines(BuildContext context) {
     cuisines = [
-      OptionsModel(context.local.egyptian, false),
-      OptionsModel(context.local.italian, false),
-      OptionsModel(context.local.indian, false),
-      OptionsModel(context.local.chinese, false),
-      OptionsModel(context.local.french, false),
-      OptionsModel(context.local.japanese, false),
-      OptionsModel(context.local.american, false),
-      OptionsModel(context.local.turkish, false),
+      OptionsModel(context.locale.egyptian, false),
+      OptionsModel(context.locale.italian, false),
+      OptionsModel(context.locale.indian, false),
+      OptionsModel(context.locale.chinese, false),
+      OptionsModel(context.locale.french, false),
+      OptionsModel(context.locale.japanese, false),
+      OptionsModel(context.locale.american, false),
+      OptionsModel(context.locale.turkish, false),
     ];
   }
 
@@ -121,11 +123,41 @@ class CreateRecipeCubit extends Cubit<CreateRecipeStates> {
     response.when(
       success: (RecipeResponseModel recipeData) {
         log(recipeData.toString());
-        recipe=recipeData;
+        recipe = recipeData;
         return emit(const GenerateRecipeSuccessState());
       },
       failure: (ErrorHandler errorHandler) =>
           emit(GenerateRecipeErrorState(errorHandler.code)),
+    );
+  }
+
+  saveRecipe() async {
+    emit(const SaveRecipeLoadingState());
+    if (saved) {
+      saved = false;
+      await _remove();
+    } else {
+      saved = true;
+      await _save();
+    }
+  }
+
+  Future<void> _save() async {
+    final FirebaseResult<void> response =
+        await _recipeRepository.saveRecipe(recipe!);
+    response.when(
+      success: (data) => emit(const SaveRecipeSuccessState()),
+      failure: (errorHandler) => emit(SaveRecipeErrorState(errorHandler.code)),
+    );
+  }
+
+  Future<void> _remove() async {
+    final FirebaseResult<void> response =
+        await _recipeRepository.removeRecipe(recipe!);
+    response.when(
+      success: (data) => emit(const RemoveRecipeSuccessState()),
+      failure: (errorHandler) =>
+          emit(RemoveRecipeErrorState(errorHandler.code)),
     );
   }
 
@@ -251,7 +283,7 @@ don't write english words in arabic recipe
 
   @override
   Future<void> close() {
-    recipe=null;
+    recipe = null;
     screens.clear();
     images.clear();
     stableIngredients.clear();

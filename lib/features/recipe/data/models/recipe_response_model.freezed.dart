@@ -20,11 +20,15 @@ RecipeResponseModel _$RecipeResponseModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$RecipeResponseModel {
+  @HiveField(0)
   String get id => throw _privateConstructorUsedError;
+  @HiveField(1)
   @JsonKey(name: "english_recipe")
   RecipeModel get englishRecipe => throw _privateConstructorUsedError;
+  @HiveField(2)
   @JsonKey(name: "arabic_recipe")
   RecipeModel get arabicRecipe => throw _privateConstructorUsedError;
+  @HiveField(3)
   @JsonKey(name: "nutrition_information")
   NutritionInformationModel get nutationInformation =>
       throw _privateConstructorUsedError;
@@ -42,9 +46,10 @@ abstract class $RecipeResponseModelCopyWith<$Res> {
       _$RecipeResponseModelCopyWithImpl<$Res, RecipeResponseModel>;
   @useResult
   $Res call(
-      {String id,
-      @JsonKey(name: "english_recipe") RecipeModel englishRecipe,
-      @JsonKey(name: "arabic_recipe") RecipeModel arabicRecipe,
+      {@HiveField(0) String id,
+      @HiveField(1) @JsonKey(name: "english_recipe") RecipeModel englishRecipe,
+      @HiveField(2) @JsonKey(name: "arabic_recipe") RecipeModel arabicRecipe,
+      @HiveField(3)
       @JsonKey(name: "nutrition_information")
       NutritionInformationModel nutationInformation});
 
@@ -126,9 +131,10 @@ abstract class _$$RecipeResponseModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String id,
-      @JsonKey(name: "english_recipe") RecipeModel englishRecipe,
-      @JsonKey(name: "arabic_recipe") RecipeModel arabicRecipe,
+      {@HiveField(0) String id,
+      @HiveField(1) @JsonKey(name: "english_recipe") RecipeModel englishRecipe,
+      @HiveField(2) @JsonKey(name: "arabic_recipe") RecipeModel arabicRecipe,
+      @HiveField(3)
       @JsonKey(name: "nutrition_information")
       NutritionInformationModel nutationInformation});
 
@@ -178,27 +184,37 @@ class __$$RecipeResponseModelImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$RecipeResponseModelImpl implements _RecipeResponseModel {
-  const _$RecipeResponseModelImpl(
-      {required this.id,
-      @JsonKey(name: "english_recipe") required this.englishRecipe,
-      @JsonKey(name: "arabic_recipe") required this.arabicRecipe,
+
+@JsonSerializable(explicitToJson: true)
+@HiveType(typeId: 1)
+class _$RecipeResponseModelImpl extends _RecipeResponseModel {
+  _$RecipeResponseModelImpl(
+      {@HiveField(0) required this.id,
+      @HiveField(1)
+      @JsonKey(name: "english_recipe")
+      required this.englishRecipe,
+      @HiveField(2) @JsonKey(name: "arabic_recipe") required this.arabicRecipe,
+      @HiveField(3)
       @JsonKey(name: "nutrition_information")
-      required this.nutationInformation});
+      required this.nutationInformation})
+      : super._();
 
   factory _$RecipeResponseModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$RecipeResponseModelImplFromJson(json);
 
   @override
+  @HiveField(0)
   final String id;
   @override
+  @HiveField(1)
   @JsonKey(name: "english_recipe")
   final RecipeModel englishRecipe;
   @override
+  @HiveField(2)
   @JsonKey(name: "arabic_recipe")
   final RecipeModel arabicRecipe;
   @override
+  @HiveField(3)
   @JsonKey(name: "nutrition_information")
   final NutritionInformationModel nutationInformation;
 
@@ -241,27 +257,37 @@ class _$RecipeResponseModelImpl implements _RecipeResponseModel {
   }
 }
 
-abstract class _RecipeResponseModel implements RecipeResponseModel {
-  const factory _RecipeResponseModel(
-      {required final String id,
-      @JsonKey(name: "english_recipe") required final RecipeModel englishRecipe,
-      @JsonKey(name: "arabic_recipe") required final RecipeModel arabicRecipe,
-      @JsonKey(name: "nutrition_information")
-      required final NutritionInformationModel
-          nutationInformation}) = _$RecipeResponseModelImpl;
+abstract class _RecipeResponseModel extends RecipeResponseModel {
+  factory _RecipeResponseModel(
+          {@HiveField(0) required final String id,
+          @HiveField(1)
+          @JsonKey(name: "english_recipe")
+          required final RecipeModel englishRecipe,
+          @HiveField(2)
+          @JsonKey(name: "arabic_recipe")
+          required final RecipeModel arabicRecipe,
+          @HiveField(3)
+          @JsonKey(name: "nutrition_information")
+          required final NutritionInformationModel nutationInformation}) =
+      _$RecipeResponseModelImpl;
+  _RecipeResponseModel._() : super._();
 
   factory _RecipeResponseModel.fromJson(Map<String, dynamic> json) =
       _$RecipeResponseModelImpl.fromJson;
 
   @override
+  @HiveField(0)
   String get id;
   @override
+  @HiveField(1)
   @JsonKey(name: "english_recipe")
   RecipeModel get englishRecipe;
   @override
+  @HiveField(2)
   @JsonKey(name: "arabic_recipe")
   RecipeModel get arabicRecipe;
   @override
+  @HiveField(3)
   @JsonKey(name: "nutrition_information")
   NutritionInformationModel get nutationInformation;
   @override

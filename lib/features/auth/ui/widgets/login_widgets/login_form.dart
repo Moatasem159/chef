@@ -19,10 +19,10 @@ class _LoginFormState extends State<_LoginForm> {
         children: [
           AuthTextFormField(
             controller: context.read<LoginCubit>().emailController,
-            hintText: context.local.email,
+            hintText: context.locale.email,
             validator: (value) {
               if (value.isNullOrEmpty() || !AppRegex.isEmailValid(value!)) {
-                return context.local.validEmail;
+                return context.locale.validEmail;
               }
               return null;
             },
@@ -31,7 +31,7 @@ class _LoginFormState extends State<_LoginForm> {
           AuthTextFormField(
             obscure: isObscureText,
             controller: context.read<LoginCubit>().passwordController,
-            hintText: context.local.password,
+            hintText: context.locale.password,
             suffixIcon: GestureDetector(
               onTap: () {
                 setState(() {
@@ -44,10 +44,10 @@ class _LoginFormState extends State<_LoginForm> {
             ),
             validator: (value) {
               if (value.isNullOrEmpty()) {
-                return context.local.validPassword;
+                return context.locale.validPassword;
               }
               if (!AppRegex.hasMinLength(value!)) {
-                return context.local.numberCount;
+                return context.locale.numberCount;
               }
               return null;
             },
@@ -85,7 +85,7 @@ class _LoginFormState extends State<_LoginForm> {
               }
             },
             buttonSize: Size.fromWidth(context.screenWidth),
-            title: context.local.login,
+            title: context.locale.login,
           ),
           verticalSpace(25),
         ],

@@ -13,7 +13,7 @@ class _IngredientsSection extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            context.local.ingredients(":"),
+            context.locale.ingredients(":"),
             style: AppTextStyles.style18SemiBold,
           ),
           verticalSpace(6),
