@@ -1,27 +1,22 @@
-import 'package:chef/core/extension/context_extensions.dart';
-import 'package:chef/core/extension/spacing.dart';
-import 'package:chef/core/router/routes.dart';
-import 'package:chef/core/utils/app_assets.dart';
-import 'package:chef/core/utils/app_text_styles.dart';
-import 'package:chef/core/widgets/main_button_with_text.dart';
-import 'package:chef/main.dart';
+import 'package:chef/core/themes/app_theme.dart';
+import 'package:chef/features/recipe/ui/widgets/discover_screen/discover_screen_body.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-part '../widgets/discover_screen/discover_title.dart';
-part '../widgets/discover_screen/recipe_with_pic_card.dart';
+import 'package:flutter/services.dart';
+
 class DiscoverScreen extends StatelessWidget {
   const DiscoverScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      physics: const BouncingScrollPhysics(),
-      slivers: [
-        verticalSliverSpace(30),
-        const _DiscoverTitle(),
-        verticalSliverSpace(20),
-        const _RecipeWithPicCard()
-      ],
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: AppTheme.systemUiOverlayStyle(context),
+      child: const SafeArea(
+        child: Scaffold(
+          drawerEnableOpenDragGesture: false,
+          drawer: Drawer(),
+          body: DiscoverScreenBody(),
+        ),
+      ),
     );
   }
 }

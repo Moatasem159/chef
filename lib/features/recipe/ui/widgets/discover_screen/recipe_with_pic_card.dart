@@ -1,5 +1,4 @@
-part of '../../screens/discover_screen.dart';
-
+part of 'discover_screen_body.dart';
 class _RecipeWithPicCard extends StatelessWidget {
   const _RecipeWithPicCard();
 

@@ -2,8 +2,8 @@ import 'package:chef/core/router/routes.dart';
 import 'package:chef/features/auth/ui/screens/login_screen.dart';
 import 'package:chef/features/auth/ui/screens/onboarding_screen.dart';
 import 'package:chef/features/auth/ui/screens/register_screen.dart';
-import 'package:chef/features/home/ui/screens/home_screen.dart';
 import 'package:chef/features/recipe/ui/screens/create_recipe_screen.dart';
+import 'package:chef/features/recipe/ui/screens/discover_screen.dart';
 import 'package:flutter/material.dart';
 
 part 'routes_animation/slide_from_left_to_right.dart';
@@ -23,7 +23,7 @@ class AppRouter {
         {
           if (isUserLoggedIn) {
             return MaterialPageRoute(
-                settings: settings, builder: (context) => const HomeScreen());
+                settings: settings, builder: (context) => const DiscoverScreen());
           } else {
             if (isOnboardingSkipped) {
               return MaterialPageRoute(
@@ -47,11 +47,11 @@ class AppRouter {
           pageBuilder: (context, animation, secondaryAnimation) =>
               const RegisterScreen(),
         );
-      case Routes.homeRoute:
+      case Routes.discoverRoute:
         return SlideFromLeftToRight(
           settings: settings,
           pageBuilder: (context, animation, secondaryAnimation) =>
-              const HomeScreen(),
+              const DiscoverScreen(),
         );
       case Routes.createRecipeRoute:
         return SlideFromDownToUpWithFading(

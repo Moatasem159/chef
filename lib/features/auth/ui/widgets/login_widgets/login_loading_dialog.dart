@@ -10,7 +10,7 @@ class _LoginLoadingDialog extends StatelessWidget {
           Future.delayed(const Duration(milliseconds: 700)).then(
                 (_) {
               context.pop();
-              context.pushNamedAndRemoveUntil(Routes.homeRoute,
+              context.pushNamedAndRemoveUntil(Routes.discoverRoute,
                   predicate: (route) => false);
             },
           );

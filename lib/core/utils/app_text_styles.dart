@@ -19,7 +19,6 @@ abstract class AppTextStyles {
     fontSize: 16.sp,
     fontWeight: FontWeight.w500,
   );
-
   static final TextStyle style16Bold = GoogleFonts.poppins(
     fontSize: 16.sp,
     fontWeight: FontWeight.bold,
@@ -43,5 +42,13 @@ abstract class AppTextStyles {
   static final TextStyle style14SemiBold = GoogleFonts.poppins(
     fontSize: 14.sp,
     fontWeight: FontWeight.w500,
+  );
+  static final TextStyle style12SemiBold = GoogleFonts.poppins(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w500,
+  );
+  static final TextStyle style10Normal = GoogleFonts.poppins(
+    fontSize: 10.sp,
+    fontWeight: FontWeight.w400,
   );
 }
