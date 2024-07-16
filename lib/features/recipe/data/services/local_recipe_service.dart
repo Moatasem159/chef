@@ -7,7 +7,12 @@ class LocalRecipeService{
   Future<void> cacheRecipe(RecipeResponseModel recipe)async{
     await _recipeBox.put(recipe.id, recipe);
   }
+  /// remove [recipe] from local database
   Future<void> removeRecipe(RecipeResponseModel recipe)async{
     await _recipeBox.delete(recipe.id);
+  }
+  /// clear all [recipes] from local database
+  Future<void> clearAllRecipes()async{
+    await _recipeBox.clear();
   }
 }

@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
+import 'dart:developer';
 import 'package:chef/core/errors/error_handler.dart';
 import 'package:chef/core/errors/firebase_exception_codes.dart';
 import 'package:chef/core/extension/string_extension.dart';
@@ -33,12 +34,16 @@ class RecipeRepository {
         if (response!.text!.trim() == ExceptionCodes.imageError) {
           return FirebaseResult.failure(
               ErrorHandler.handle(ExceptionCodes.imageError));
-        } else if (response.text!.trim() == ExceptionCodes.noImageError) {
+        }
+        else if (response.text!.trim() == ExceptionCodes.noImageError) {
           return FirebaseResult.failure(
               ErrorHandler.handle(ExceptionCodes.noImageError));
-        } else {
+        }
+        else {
           final String validaJson = response.text!.cleanJson();
+          log(validaJson);
           final json = jsonDecode(validaJson);
+          log(json.toString());
           final RecipeResponseModel recipe = RecipeResponseModel.fromJson(json);
           return FirebaseResult.success(recipe);
         }
@@ -74,7 +79,7 @@ class RecipeRepository {
         return const FirebaseResult.success(null);
       } catch (e) {
         return FirebaseResult.failure(
-            ErrorHandler.handle(ExceptionCodes.internetConnection));
+            ErrorHandler.handle(e.toString()));
       }
     } else {
       return FirebaseResult.failure(

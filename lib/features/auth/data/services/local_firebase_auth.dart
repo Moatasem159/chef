@@ -8,4 +8,9 @@ class LocalFirebaseAuth{
   Future<void> cacheUser(FirebaseUserModel user)async{
      await _userBox.put(AppConstants.loggedInUser,user);
   }
+  /// get [userData] from local database
+  Future<FirebaseUserModel?> getUser()async{
+    FirebaseUserModel ?user= _userBox.get(AppConstants.loggedInUser);
+    return user;
+  }
 }

@@ -38,8 +38,6 @@ dependencies:
   image_picker: ^1.1.2
   # Explicitly reads environment variables into a dart file from a .env file for more security and faster start up times.
   envied: ^0.5.4+1
-  # Customizable animated page indicator with a set of built-in effects.
-  smooth_page_indicator: ^1.1.0
   # Render After Effects animations natively on Flutter.
   lottie: ^3.1.2
   # A plugin for reading and writing simple key-value pairs.Wraps NSUserDefaults on iOS and SharedPreferences on Android.
@@ -49,7 +47,7 @@ dependencies:
   # An SVG rendering and widget library for Flutter.
   flutter_svg: ^2.0.10+1
   # Annotations for the freezed code-generator. This package does nothing without freezed too.
-  freezed_annotation: ^2.4.3
+  freezed_annotation: ^2.4.4
   # Classes and helper functions that support JSON code generation via the `json_serializable` package.
   json_annotation: ^4.9.0
   # Lightweight and blazing fast key-value database written in pure Dart. Strongly encrypted using AES-256.

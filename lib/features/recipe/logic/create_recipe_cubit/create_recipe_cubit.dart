@@ -147,7 +147,10 @@ class CreateRecipeCubit extends Cubit<CreateRecipeStates> {
         await _recipeRepository.saveRecipe(recipe!);
     response.when(
       success: (data) => emit(const SaveRecipeSuccessState()),
-      failure: (errorHandler) => emit(SaveRecipeErrorState(errorHandler.code)),
+      failure: (errorHandler) {
+        saved = true;
+        return emit(SaveRecipeErrorState(errorHandler.code));
+      },
     );
   }
 
@@ -156,8 +159,10 @@ class CreateRecipeCubit extends Cubit<CreateRecipeStates> {
         await _recipeRepository.removeRecipe(recipe!);
     response.when(
       success: (data) => emit(const RemoveRecipeSuccessState()),
-      failure: (errorHandler) =>
-          emit(RemoveRecipeErrorState(errorHandler.code)),
+      failure: (errorHandler) {
+        saved = false;
+        return emit(RemoveRecipeErrorState(errorHandler.code));
+      },
     );
   }
 
@@ -276,7 +281,7 @@ if cuisines and allergens more than one word separate between them with ","
 ingredients and instructions should be of type List<String>.
 Make ingredients with quantities.
 nutritionInformation should be of type Map<String, String>.
-don't put trailing commas after the last elements in the lists.
+DON'T PUT TRAILING COMMAS AFTER THE LAST ELEMENTS IN EVERY LISTS.
 in arabic recipe translate every field
 don't write english words in arabic recipe
 ''';

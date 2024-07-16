@@ -35,21 +35,23 @@ Future<void> setupGetIt() async {
       () => FirebaseFirestore.instance);
   getIt.registerLazySingleton<FirebaseAuthClient>(
       () => FirebaseAuthClient(getIt(), getIt()));
-  getIt.registerLazySingleton<LocalFirebaseAuth>(
-      () => LocalFirebaseAuth(getIt()));
+  getIt.registerLazySingleton<LocalFirebaseAuth>(() => LocalFirebaseAuth(getIt()));
   getIt.registerLazySingleton<FirebaseAuthRepository>(
       () => FirebaseAuthRepository(getIt(), getIt()));
   getIt.registerLazySingleton<GeminiClient>(() => GeminiClient());
-  getIt.registerLazySingleton<RecipeFirebaseService>(() => RecipeFirebaseService(getIt()));
+  getIt.registerLazySingleton<RecipeFirebaseService>(
+      () => RecipeFirebaseService(getIt()));
   getIt.registerLazySingleton<LocalRecipeService>(() => LocalRecipeService(getIt()));
   getIt.registerLazySingleton<NetworkInfo>(
       () => NetworkInfo(InternetConnectionChecker()));
-  getIt.registerLazySingleton<RecipeRepository>(() => RecipeRepository(
-        getIt(),
-        getIt(),
-        getIt(),
-        getIt(),
-      ));
+  getIt.registerLazySingleton<RecipeRepository>(
+    () => RecipeRepository(
+      getIt(),
+      getIt(),
+      getIt(),
+      getIt(),
+    ),
+  );
 }
 
 Future<void> _initHive() async {
