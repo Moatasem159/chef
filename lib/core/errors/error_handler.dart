@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:chef/core/extension/context_extensions.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -31,6 +33,7 @@ class ErrorHandler implements Exception {
     } else if (code == ExceptionCodes.internetConnection) {
       return "Internet connection";
     } else {
+      log(code);
       return code;
     }
   }

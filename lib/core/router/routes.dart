@@ -4,4 +4,5 @@ abstract class Routes{
   static const String registerRoute='/register';
   static const String discoverRoute='/discover';
   static const String createRecipeRoute='/createRecipe';
+  static const String accountRoute='/account';
 }

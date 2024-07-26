@@ -14,8 +14,10 @@ class GeminiClient {
     final GenerativeModel model = GenerativeModel(
       model: "gemini-1.5-flash",
       apiKey: Env.apiKey,
+
       generationConfig: GenerationConfig(
         temperature: 2,
+        responseMimeType: 'application/json',
         topP:0.95,
       )
     );
@@ -31,6 +33,7 @@ class GeminiClient {
       Content.multi([...imagesParts, mainText, ...additionalTextParts])
     ];
     return await model.generateContent(
+
       input,
       safetySettings: [
         SafetySetting(HarmCategory.harassment, HarmBlockThreshold.high),

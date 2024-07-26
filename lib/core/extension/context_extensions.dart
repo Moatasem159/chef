@@ -17,6 +17,7 @@ extension LocalizationExtensions on BuildContext {
 }
 
 extension NavigationExtentions on BuildContext {
+  RouteSettings get routeName=>ModalRoute.of(this)!.settings;
   Future<dynamic> pushNamed(String routeName, {Object? arguments}) =>
       Navigator.of(this).pushNamed(routeName, arguments: arguments);
 

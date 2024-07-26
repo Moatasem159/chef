@@ -1,4 +1,5 @@
 {
+  "title": "Chef bot",
   "onboardingTitle": "Welcome to Chefbot!",
   "onboardingSubTitle": "Discover delicious possibilities with our AI-powered recipe app",
   "letsGetStarted": "Let's get started!",
@@ -112,5 +113,6 @@
   "saveRecipe": "Save Recipe",
   "savedRecipeMsg": "Recipe Saved successfully",
   "removeRecipeMsg": "Recipe Removed successfully",
-  "saveRecipeError": "Something went wrong"
+  "saveRecipeError": "Something went wrong",
+  "account":"Account"
 }

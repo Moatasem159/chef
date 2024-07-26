@@ -98,6 +98,9 @@ abstract class AppTheme {
       selectedLabelStyle: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.w600),
       unselectedLabelStyle: GoogleFonts.poppins(fontSize: 12,),
     ),
+    listTileTheme: const ListTileThemeData(
+      selectedTileColor: AppColors.primaryLightColor,
+    ),
   );
   static final ThemeData darkTheme = ThemeData(
     scaffoldBackgroundColor: AppColors.scaffoldDarkBackground,
@@ -184,6 +187,9 @@ abstract class AppTheme {
       landscapeLayout: BottomNavigationBarLandscapeLayout.centered,
       selectedLabelStyle: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.w600),
       unselectedLabelStyle: GoogleFonts.poppins(fontSize: 12,),
+    ),
+    listTileTheme: const ListTileThemeData(
+      selectedTileColor: AppColors.primaryDarkColor,
     ),
   );
 

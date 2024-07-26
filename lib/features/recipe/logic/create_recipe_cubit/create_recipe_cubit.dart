@@ -118,11 +118,13 @@ class CreateRecipeCubit extends Cubit<CreateRecipeStates> {
 
   Future<void> generateRecipe() async {
     emit(const GenerateRecipeLoadingState());
+
     final FirebaseResult<RecipeResponseModel> response =
         await _recipeRepository.generateContent(prompt: _buildPrompt());
     response.when(
       success: (RecipeResponseModel recipeData) {
         log(recipeData.toString());
+        saved=false;
         recipe = recipeData;
         return emit(const GenerateRecipeSuccessState());
       },
@@ -274,14 +276,15 @@ YOU MUST RETURN THE RECIPE AS VALID JSON USING THE FOLLOWING STRUCTURE:
     "protein": "\$protein"
   }
 }
-  
+
+
 uniqueId should be unique and of type String. 
 title, description, cuisine, allergens, and servings should be of String type. 
 if cuisines and allergens more than one word separate between them with ","
 ingredients and instructions should be of type List<String>.
 Make ingredients with quantities.
 nutritionInformation should be of type Map<String, String>.
-DON'T PUT TRAILING COMMAS AFTER THE LAST ELEMENTS IN EVERY LISTS.
+DON'T PUT TRAILING COMMAS AFTER THE LAST ELEMENTS IN EVERY LISTS.  
 in arabic recipe translate every field
 don't write english words in arabic recipe
 ''';
